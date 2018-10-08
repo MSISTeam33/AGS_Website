@@ -2,7 +2,7 @@ CREATE TABLE client (
   clientId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   clientName VARCHAR(250) NOT NULL,
   clientDescription VARCHAR(1000) NOT NULL,
-  gicsSector VARCHAR(50) NOT NULL
+  gicsSector VARCHAR(50) NOT NULL,
   gicsSubIndustry VARCHAR(50) NOT NULL,
   headquarters VARCHAR(50) NOT NULL
 );
