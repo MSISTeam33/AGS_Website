@@ -14,7 +14,7 @@ class Client
     $this->clientDescription = $row['clientDescription'];
     $this->gicsSector = $row['gicsSector'];
     $this->gicsSubIndustry = $row['gicsSubIndustry'];
-    $this->headquaters = $row['headquarters'];
+    $this->headquarters = $row['headquarters'];
   }
   public function create() {
     // 1. Connect to the database
@@ -24,7 +24,11 @@ class Client
     $statement = $db->prepare($sql);
     // 3. Run the query
     $success = $statement->execute([
-      $this->clientId
+      $this->clientName,
+      $this->clientDescription,
+      $this->gicsSector,
+      $this->gicsSubIndustry,
+      $this->headquarters
     ]);
     $this->clientId = $db->lastInsertId();
   }
