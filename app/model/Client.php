@@ -9,12 +9,12 @@ class Client
   public $headquarters;
 
   public function __construct($row) {
-    $this->clientId = intval($row['clientId']);
+    $this->clientId = isset($row['clientId']) ? intval($row['clientId']) : null;
     $this->clientName = $row['clientName'];
     $this->clientDescription = $row['clientDescription'];
     $this->gicsSector = $row['gicsSector'];
     $this->gicsSubIndustry = $row['gicsSubIndustry'];
-    $this->headquaters = $row['headquarters'];
+    $this->headquarters = $row['headquarters'];
   }
   public function create() {
     // 1. Connect to the database
@@ -24,7 +24,11 @@ class Client
     $statement = $db->prepare($sql);
     // 3. Run the query
     $success = $statement->execute([
-      $this->clientId
+      $this->clientName,
+      $this->clientDescription,
+      $this->gicsSector,
+      $this->gicsSubIndustry,
+      $this->headquarters
     ]);
     $this->clientId = $db->lastInsertId();
   }
