@@ -24,7 +24,7 @@ class Client
     $statement = $db->prepare($sql);
     // 3. Run the query
     $success = $statement->execute([
-      $this->comment
+      $this->clientId
     ]);
     $this->clientId = $db->lastInsertId();
   }
