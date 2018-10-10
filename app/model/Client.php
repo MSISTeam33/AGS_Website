@@ -20,7 +20,7 @@ class Client
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     // 2. Prepare the query
-    $sql = 'INSERT into client (client) VALUES (?)';
+    $sql = 'INSERT into client (clientName, clientDescription, gicsSector, gicsSubIndustry, headquarters) VALUES (?,?,?,?,?)';
     $statement = $db->prepare($sql);
     // 3. Run the query
     $success = $statement->execute([
