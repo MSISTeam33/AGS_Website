@@ -11,3 +11,8 @@ require 'environment.php';
 
 /** Models **/
 require 'model/Client.php';
+require 'model/Site.php';
+require 'model/Turbine.php';
+require 'model/Sensor.php';
+require 'model/Comment.php';
+require 'model/SensorTimeSeries.php';
