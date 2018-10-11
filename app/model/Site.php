@@ -1,5 +1,5 @@
 <?php
-class Client
+class Site
 {
   public $siteId;
   public $clientId;
