@@ -5,7 +5,7 @@ require '../../app/common.php';
 $sensorDeployedId = intval($_GET['sensorDeployedId'] ?? 0);
 
 // 1. Go to the database and get all work associated with the $taskId
-$sensorTimeSeriesArr = Turbine::getSensorTimeSeriesBySensorDeployedId($sensorDeployedId);
+$sensorTimeSeriesArr = SensorTimeSeries::getSensorTimeSeriesBySensorDeployedId($sensorDeployedId);
 // 2. Convert to JSON
 $json = json_encode($sensorTimeSeriesArr, JSON_PRETTY_PRINT);
 // 3. Print
