@@ -1,5 +1,5 @@
 <?php
-class SectionTimeSeries
+class SensorTimeSeries
 {
   public $sensorDeployedId;
   public $dataCollectedDate;
