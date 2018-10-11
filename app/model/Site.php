@@ -1,4 +1,4 @@
-<?php 
+<?php
 class Site
 {
   public $siteId;
@@ -31,7 +31,7 @@ class Site
 
   public static function getSiteByClientId(int $clientId) {
     // 1. Connect to the database
-    $db = new PDO(DB_SEVER, DB_USER, DB_PW);
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     // 2. Prepare the query
     $sql = 'SELECT * FROM site WHERE clientId = ?';
     $statement = $db->prepare($sql);
