@@ -1,4 +1,4 @@
-<?php 
+<?php
 class Turbine
 {
   public $turbineId;
@@ -14,7 +14,7 @@ class Turbine
     $this->turbineDescription = $row['turbineDescription'];
     $this->capacity = intval($row['capacity']);
     $this->rampUpTime = intval($row['rampUpTime']);
-    $this->$maintenanceInterval = intval($row['maintenanceInterval']);
+    $this->maintenanceInterval = intval($row['maintenanceInterval']);
   }
 
   public static function fetchAll() {
