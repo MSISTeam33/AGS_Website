@@ -29,20 +29,24 @@ class Client
     $this->addrCountry = $row['addrCountry'];
   }
 
-  public static function fetchAll() {
+  public static function getSiteByClientId(int $clientId) {
     // 1. Connect to the database
-    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+    $db = new PDO(DB_SEVER, DB_USER, DB_PW);
     // 2. Prepare the query
-    $sql = 'SELECT * FROM site';
+    $sql = 'SELECT * FROM site WHERE clientId = ?';
     $statement = $db->prepare($sql);
     // 3. Run the query
-    $success = $statement->execute();
+    $success = $statement->execute(
+        [$clientId]
+    );
     // 4. Handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      // 4.a. For each row, make a new work object
       $siteItem =  new Site($row);
       array_push($arr, $siteItem);
     }
+    // 4.b. return the array of work objects
     return $arr;
   }
 }
