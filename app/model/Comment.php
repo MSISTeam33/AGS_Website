@@ -17,7 +17,8 @@ class Comment
     $sql = 'INSERT into comments (clientId,commentSection) VALUES (?,?)';
     $statement = $db->prepare($sql);
     $success = $statement->execute([
-      $this->clientId,commentSection
+      $this->clientId,
+      $this->commentSection
     ]);
     $this->commentId = $db->lastInsertId();
   }
