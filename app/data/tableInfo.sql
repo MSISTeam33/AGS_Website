@@ -78,3 +78,10 @@ CREATE TABLE sensorTimeSeries (
   starts INT NOT NULL,
   FOREIGN KEY (sensorDeployedId) REFERENCES sensorDeployed(sensorDeployedId)
 );
+
+CREATE TABLE comments (
+	commentId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    clientId INT NOT NULL,
+    commentSection VARCHAR(500) NOT NULL,
+    FOREIGN KEY (clientId) REFERENCES client(clientId)
+);
