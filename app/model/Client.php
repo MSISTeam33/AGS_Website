@@ -16,22 +16,7 @@ class Client
     $this->gicsSubIndustry = $row['gicsSubIndustry'];
     $this->headquarters = $row['headquarters'];
   }
-  public function create() {
-    // 1. Connect to the database
-    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    // 2. Prepare the query
-    $sql = 'INSERT into client (clientName, clientDescription, gicsSector, gicsSubIndustry, headquarters) VALUES (?,?,?,?,?)';
-    $statement = $db->prepare($sql);
-    // 3. Run the query
-    $success = $statement->execute([
-      $this->clientName,
-      $this->clientDescription,
-      $this->gicsSector,
-      $this->gicsSubIndustry,
-      $this->headquarters
-    ]);
-    $this->clientId = $db->lastInsertId();
-  }
+  
   public static function fetchAll() {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
