@@ -14,12 +14,12 @@ class Comment
 
   public function createComment() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'INSERT into comments (commentId,commentSection) VALUES (?,?)';
+    $sql = 'INSERT into comments (clientId,commentSection) VALUES (?,?)';
     $statement = $db->prepare($sql);
     $success = $statement->execute([
-      $this->comment
+      $this->clientId,commentSection
     ]);
-    $this->clientId = $db->lastInsertId();
+    $this->commentId = $db->lastInsertId();
   }
 
 
