@@ -6,13 +6,13 @@ class Comment
   public $clientId;
   public $commentSection;
   public function __construct($row) {
-    $this->id = intval($row['commentId']);
-    $this->comment = $row['clientId'];
-    $this->comment = $row['commentSection'];
+    $this->commentId = isset($row['commentId']) ? intval($row['commentId']) : null;
+    $this->clientId = $row['clientId'];
+    $this->commentSection = $row['commentSection'];
   }
 
 
-  public function createComment() {
+  public function create() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'INSERT into comments (clientId,commentSection) VALUES (?,?)';
     $statement = $db->prepare($sql);
@@ -23,7 +23,7 @@ class Comment
   }
 
 
-  public static function fetchComments() {
+  public static function fetchAll() {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     // 2. Prepare the query
