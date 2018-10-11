@@ -2,7 +2,7 @@
 
 require '../../app/common.php';
 
-$sesorDeployedId = intval($_GET['sensorDeployedId'] ?? 0);
+$sensorDeployedId = intval($_GET['sensorDeployedId'] ?? 0);
 
 // 1. Go to the database and get all work associated with the $taskId
 $sensorTimeSeriesArr = Turbine::getSensorTimeSeriesBySensorDeployedId($sensorDeployedId);
