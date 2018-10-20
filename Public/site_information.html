@@ -83,6 +83,50 @@
   </table>
 </div>
 
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#turbine_collapse">Current Turbines</a>
+      </h4>
+    </div>
+    <div id="turbine_collapse" class="panel-collapse collapse">
+
+      <div class="panel-body">
+  <div class="well col-xs-8 col-md-4 col-lg-4">
+      <h4 class = "text-success">Turbine Information</h4>
+         <table id = "turbineTable">
+      <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+      </thead>
+  <tbody id= "turbineTableBody" v-for="t in turbine">
+    <tr>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+      <td>{{t.}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 </main>
 
