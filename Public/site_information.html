@@ -83,56 +83,32 @@
   </table>
 </div>
 <br>
-<div class=" col-xs-12 col-md-8 col-lg-8">
-           <br>
-        <h4 class = "text-success">Turbine Information</h4>
-    <table class="table">
-        <thead>
-      <tr>
-        <th>Turbine ID</th>
-        <th>Battery Percentage</th>
-        <th>Turbine Deployed?</th>
-      </tr>
-        </thead>
-    <tbody>
-      <tr>
-        <td>T001</td>
-        <td>95%</td>
-        <td>Yes</td>
-      </tr>
-    </tbody>
-            </table>
-          </div>
-      </div>
-    </div>
-</div>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#accordion" href="#site_two_collapse">Site 2</a>
+      <a data-toggle="collapse" data-parent="#accordion" href="#site_two_collapse">Current Turbines</a>
     </h4>
   </div>
 <div id="site_two_collapse" class="panel-collapse collapse">
 <div class="panel-body">
 
     <div class="well col-xs-8 col-md-4 col-lg-4">
-    <h4 class = "text-success">Site Info</h4>
-       <table class="table">
+    <h4 class = "text-success">Turbine Information</h4>
+       <table id = "turbineTable">
     <thead>
   <tr>
-    <th>Site ID</th>
-    <th>Site Name</th>
+    <th></th>
+    <th></th>
   </tr>
     </thead>
-<tbody>
+<tbody id = "turbineTableBody" v-for="t in turbine">
   <tr>
-    <td>S002</td>
-    <td>Site 2</td>
+    <td></td>
+    <td></td>
   </tr>
 </tbody>
-        </table>
-
-        </div>
+</table>
+</div>
 <div class=" col-xs-12 col-md-8 col-lg-8">
               <br>
     <h4 class = "text-success">Turbine Info</h4>
