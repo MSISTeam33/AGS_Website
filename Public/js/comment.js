@@ -1,9 +1,10 @@
 var commentsApp = new Vue({
-  el: '#commentMain',
+  el: '#clientPage',
   data: {
     comments: [{
-      id: 0,
-      comment: ''
+      commentId: 0,
+      clientId: 0,
+      commentSection: ''
     }],
     commentForm: { },   // populated by this.getEmptyWorkForm()
     commentList: [{
@@ -40,8 +41,9 @@ var commentsApp = new Vue({
     },
     getEmptyCommentForm() {
       return {
-        id: 0,
-        comment: null
+        commentId: 0,
+        clientId: 0,
+        commentSection: null
       }
     }
 
