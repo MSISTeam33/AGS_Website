@@ -7,7 +7,7 @@ var clientApp = new Vue({
   create () {
     fetch('api/client.php')
     .then(response => response.json())
-    .then(json => {this.client = json; console.log(json);})
+    .then(json => {this.client = json})
     .catch(err=> {
       console.log('CLIENT FETCH ERROR:');
       console.log(err);
