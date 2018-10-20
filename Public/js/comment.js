@@ -1,23 +1,16 @@
 var commentsApp = new Vue({
   el: '#clientPage',
   data: {
-    comments: [{
-      commentId: 0,
-      clientId: 0,
-      commentSection: ''
-    }],
     commentForm: { },   // populated by this.getEmptyWorkForm()
-    commentList: [{
-      id: 0,
-      comment: ''
-    }] // All the teams
+    commentList: [], // All the teams
+    clientList:[]
   },
   computed: {
   },
   methods: {
     handleCommentForm(e) {
 
-      const s = document.getElementById('comment').value;
+      const s = JSON.stringify(this.commentForm);
       console.log(s);
 
       // POST to remote server
@@ -26,14 +19,13 @@ var commentsApp = new Vue({
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
-        body: JSON.stringify({
-          comment:s
+        body: s
         }) // body data type must match "Content-Type" header
-      })
       .then( response => response.json() )
-      .then(response => {console.log(response)})
-      .then( json => {this.commentList = json})
+      .then( json => {this.commentList.push(json)})
       .catch( err => {
+        console.error('COMMENT POST ERROR:');
+        console.error(err);
       })
 
       // Reset workForm
@@ -41,7 +33,6 @@ var commentsApp = new Vue({
     },
     getEmptyCommentForm() {
       return {
-        commentId: 0,
         clientId: 0,
         commentSection: null
       }
@@ -49,13 +40,20 @@ var commentsApp = new Vue({
 
   },
   created () {
-    const url = new URL(window.location.href);
+    this.commentForm=this.getEmptyCommentForm();
 
     fetch('api/comment.php')
     .then( response => response.json() )
     .then( json => {commentsApp.commentList = json})
     .catch( err => {
       console.log('COMMENTS FETCH ERROR:');
+      console.log(err);
+    });
+    fetch('api/client.php')
+    .then(response=>response.json())
+    .then(json=>{commentsApp.clientList=json})
+    .catch(err=>{
+      console.log('CLIENTS FETCH ERROR:');
       console.log(err);
     })
   }
