@@ -100,30 +100,22 @@
          <table id = "turbineTable">
       <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Turbine ID</th>
+      <th>Turbine Name</th>
+      <th>Turbine Description</th>
+      <th>Capacity</th>
+      <th>Ramp Up Time</th>
+      <th>Maintenance Interval</th>
     </tr>
       </thead>
   <tbody id= "turbineTableBody" v-for="t in turbine">
     <tr>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
-      <td>{{t.}}</td>
+      <td>{{t.turbineId}}</td>
+      <td>{{t.turbineName}}</td>
+      <td>{{t.turbineDescription}}</td>
+      <td>{{t.capacity}}</td>
+      <td>{{t.rampUpTime}}</td>
+      <td>{{t.maintenanceInterval}}</td>
     </tr>
   </tbody>
 </table>
@@ -145,30 +137,28 @@
          <table id = "timeSeriesTable">
       <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Data Collected Date</th>
+      <th>Output</th>
+      <th>Heat Rate</th>
+      <th>Compressor Efficiency</th>
+      <th>Availability</th>
+      <th>Reliability</th>
+      <th>Fired Hours</th>
+      <th>Trips</th>
+      <th>Starts</th>
     </tr>
       </thead>
   <tbody id= "timeSeriesTableBody" v-for="k in sensorTimeSeries">
     <tr>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
-      <td>{{k.}}</td>
+      <td>{{k.dataCollectedDate}}</td>
+      <td>{{k.output}}</td>
+      <td>{{k.heatRate}}</td>
+      <td>{{k.compressorEfficiency}}</td>
+      <td>{{k.availability}}</td>
+      <td>{{k.reliability}}</td>
+      <td>{{k.firedHours}}</td>
+      <td>{{k.trips}}</td>
+      <td>{{k.starts}}</td>
     </tr>
   </tbody>
 </table>
