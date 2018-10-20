@@ -3,8 +3,8 @@ var clientApp = new Vue({
   data: {
     client: [],
 },
-  
-  created () {
+
+  create () {
     fetch('api/client.php')
     .then(response => response.json())
     .then(json => {this.client = json; console.log(json);})
