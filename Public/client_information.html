@@ -50,39 +50,29 @@
 
         <div class="panel-body">
     <div>
-        <h4 class = "title">Client Info</h4>
-           <table class="table">
+        <h4 class = "title">Client Information</h4>
+<table id="clientTable">
         <thead>
       <tr>
         <th>Client ID</th>
         <th>Client Name</th>
         <th>Sector/Subindustry</th>
         <th>Headquarters</th>
-        <th>
-          Description
-        </th>
+        <th>Description</th>
       </tr>
         </thead>
-    <tbody>
+    <tbody id = "clientTableBody" v-for c in client>
       <tr>
-        <td>1</td>
-        <td>Hoosier Energy</td>
-        <td>
-          Energy/Energy Production
-        </td>
-        <td>Bloomington, IN</td>
-        <td>
-Hoosier Energy is a generation and transmission cooperative providing <strong>wholesale electric wind power and services </strong>to 18 member distribution cooperatives in central and southern Indiana and southeastern Illinois.
-<br />Based in Bloomington, Indiana, Hoosier Energy operates <strong>renewable energy power plants and delivers power </strong>through nearly 1700 miles of transmission network.
-        </td>
+        <td>{{}}</td>
+        <td>{{}}</td>
+        <td>{{}}</td>
+        <td>{{}}</td>
+        <td>{{}}</td>
       </tr>
     </tbody>
-            </table>
-    </div>
-            <button class="btn btn-default"><a href="">Add Notes</a>
-    </button>
-
-  </div>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
