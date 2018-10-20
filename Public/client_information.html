@@ -75,7 +75,7 @@
 </div>
 </div>
 
-<div class="panel-group" id="clientinfo2">
+<div class="panel-group" id="comments">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -84,25 +84,21 @@
 
       </h4>
     </div>
-    <div id="pacifictidal" class="panel-collapse collapse">
+    <div id="clientComment" class="panel-collapse collapse">
 
       <div class="panel-body">
   <div>
-      <h4 class = "title">Client Information</h4>
-         <table class="table">
+      <h4 class = "title">Comments</h4>
+         <table id="commentTable">
       <thead>
     <tr>
+      <th>Comment ID</th>
       <th>Client ID</th>
-      <th>Client Name</th>
-      <th>Sector/Subindustry</th>
-      <th>Headquarters</th>
-      <th>Description</th>
+      <th>Comments</th>
     </tr>
       </thead>
-  <tbody>
+  <tbody id="commentTableBody" v-for="c in comments">
     <tr>
-      <td></td>
-      <td></td>
       <td></td>
       <td></td>
       <td></td>
