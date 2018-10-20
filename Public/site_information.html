@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -36,7 +35,7 @@
                       </nav>
                     </div>
                   </header>
-<main>
+<main id = "sitePage">
 		<div class="container">
         <h2>Turbine Sites</h2>
 <p>Click on a current site to see information on the turbines at each site</p>
@@ -51,22 +50,38 @@
 
         <div class="panel-body">
     <div class="well col-xs-8 col-md-4 col-lg-4">
-        <h4 class = "text-success">Site Info</h4>
-           <table class="table">
+        <h4 class = "text-success">Site Information</h4>
+           <table id = "siteTable">
         <thead>
       <tr>
         <th>Site ID</th>
+        <th>Client ID</th>
         <th>Site Name</th>
+        <th>Site Description</th>
+        <th>Primary Contact</th>
+        <th>Capacity</th>
+        <th>Commerical Date</th>
+        <th>Address</th>
       </tr>
         </thead>
-    <tbody>
+    <tbody id= "siteTableBody" v-for="s in site">
       <tr>
-        <td>S001</td>
-        <td>Site 1</td>
+        <td>{{s.siteId}}</td>
+        <td>{{s.clientId}}</td>
+        <td>{{s.siteName}}</td>
+        <td>{{s.siteDescription}}</td>
+        <td>{{s.primaryContact}}</td>
+        <td>{{s.capacity}}</td>
+        <td>{{s.commercialDate}}</td>
+        <td>{{s.addrLine1}}</td>
+        <td>{{s.addrCity}}</td>
+        <td>{{s.addrState}}</td>
+        <td>{{s.addrZip}}</td>
+        <td>{{s.addrCountry}}</td>
       </tr>
     </tbody>
   </table>
-    </div>
+</div>
 
 <div class=" col-xs-12 col-md-8 col-lg-8">
            <br>
