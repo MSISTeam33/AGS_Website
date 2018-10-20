@@ -110,41 +110,43 @@
 </div>
 </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <!-- moment.js via CDN-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<div>
+  <form @submit.prevent="handleCommentForm" id="newCommentForm">
+      <div class="form-group row">
+        <label for="comment" class="col-sm-3 col-form-label">Add New Comment: </label>
+        <div class="col-sm-3">
+          <input id="comment" type="text" v-model="commentForm.comment" class="form-control" required>
+        </div>
+        <label for="clientId" class="col-sm-3 col-form-label">Client Id</label>
+        <div class="col-sm-3">
+          <select id="client_Id" v-model="commentForm.clientId" class="form-control" required>
+            <option v-for="c in clientList"
+            :key="c.clientId"
+            :value="c.clientId">{c.clientName}</option>
+          </select>
+        </div>
+      </div>
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+      <button type="submit" id="submitNewComment" class="btn btn-primary" onclick="location.reload()">Submit</button>
+    </form>
+</div>
 
-     <!-- development version, includes helpful console warnings -->
-     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-     <script src="js/client.js"></script>
-     <script src="js/comment.js"></script>
 
 </main>
 
 </body>
 <footer>
-  <div>
-    <form @submit.prevent="handleCommentForm" id="newCommentForm">
-        <div class="form-group row">
-          <label for="comment" class="col-sm-3 col-form-label">Add New Comment: </label>
-          <div class="col-sm-3">
-            <input id="comment" type="text" v-model="commentForm.comment" class="form-control" required>
-          </div>
-          <label for="clientId" class="col-sm-3 col-form-label">Client Id</label>
-          <div class="col-sm-3">
-            <select id="client_Id" v-model="commentForm.clientId" class="form-control" required>
-<option v-for="c in clientList"
-:key="c.clientId"
-:value="c.clientId">{c.clientName}</option>
-            </select>
-          </div>
-        </div>
-            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <button type="submit" id="submitNewComment" class="btn btn-primary" onclick="location.reload()">Submit</button>
-      </form>
-  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- moment.js via CDN-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+   <!-- development version, includes helpful console warnings -->
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script src="js/client.js"></script>
+   <script src="js/comment.js"></script>
 </footer>
 </html>
