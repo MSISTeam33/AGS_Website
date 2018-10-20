@@ -26,14 +26,11 @@
                       <li><a href="client_information">Client Information</a></li>
                 </ul>
                 </div>
-
-
-
     </nav>
         </div>
 </header>
 
-<main>
+<main id = "clientPage">
   <h1>Client Information</h1>
 
 
@@ -41,8 +38,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#hoosierenergy">Hoosier Energy
-            </a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#hoosierenergy">Hoosier Energy</a>
 
         </h4>
       </div>
@@ -56,18 +52,20 @@
       <tr>
         <th>Client ID</th>
         <th>Client Name</th>
-        <th>Sector/Subindustry</th>
+        <th>Client Description</th>
+        <th>Sector</th>
+        <th>Sub Industry</th>
         <th>Headquarters</th>
-        <th>Description</th>
       </tr>
         </thead>
-    <tbody id = "clientTableBody" v-for c in client>
+    <tbody id = "clientTableBody" v-for= "c in client">
       <tr>
-        <td>{{}}</td>
-        <td>{{}}</td>
-        <td>{{}}</td>
-        <td>{{}}</td>
-        <td>{{}}</td>
+        <td>{{c.clientId}}</td>
+        <td>{{c.clientName}}</td>
+        <td>{{c.clientDescription}}</td>
+        <td>{{c.gicsSector}}</td>
+        <td>{{c.gicsSubIndustry}}</td>
+        <td>{{c.headquarters}}</td>
       </tr>
     </tbody>
 </table>
