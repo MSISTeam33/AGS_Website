@@ -33,20 +33,7 @@
 <main id = "clientPage">
   <h1>Client Information</h1>
 
-  <div class="panel-group" id="clientnfo1">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#hoosierenergy">Our Clients</a>
-
-        </h4>
-      </div>
-      <div id="hoosierenergy" class="panel-collapse collapse">
-
-        <div class="panel-body">
-    <div>
-        <h4 class = "title">Client Information</h4>
-<table id="clientTable">
+<table id="clientTable" class="table table-striped table-sm table-hover">
         <thead>
       <tr>
         <th>Client ID</th>
@@ -68,25 +55,11 @@
       </tr>
     </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-</div>
 
-<div class="panel-group" id="comments">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#clientComment">Comments</a>
-      </h4>
-    </div>
-    <div id="clientComment" class="panel-collapse collapse">
+<br />
+<br />
 
-      <div class="panel-body">
-  <div>
-      <h4 class = "title">Comments</h4>
-         <table id="commentTable">
+         <table id="commentTable" class="table table-striped table-sm table-hover">
       <thead>
     <tr>
       <th>Comment ID</th>
@@ -94,7 +67,7 @@
       <th>Comments</th>
     </tr>
       </thead>
-  <tbody id="commentTableBody" v-for="c in commentsList">
+  <tbody id="commentTableBody" v-for="c in commentsList">
     <tr>
       <td>{{c.commentId}}</td>
       <td>{{c.clientId}}</td>
@@ -103,14 +76,6 @@
   </tbody>
 </table>
 
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-
 <div>
   <form @submit.prevent="handleCommentForm" id="newCommentForm">
       <div class="form-group row">
@@ -118,14 +83,7 @@
         <div class="col-sm-3">
           <input id="comment" type="text" v-model="commentForm.comment" class="form-control" required>
         </div>
-        <label for="clientId" class="col-sm-3 col-form-label">Client Id</label>
-        <div class="col-sm-3">
-          <select id="client_Id" v-model="commentForm.clientId" class="form-control" required>
-            <option v-for="c in clientList"
-            :key="c.clientId"
-            :value="c.clientId">{c.clientName}</option>
-          </select>
-        </div>
+
       </div>
           <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
       <button type="submit" id="submitNewComment" class="btn btn-primary" onclick="location.reload()">Submit</button>
