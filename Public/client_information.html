@@ -44,7 +44,7 @@
         <th>Headquarters</th>
       </tr>
         </thead>
-    <tbody id = "clientTableBody" v-for= "c in client">
+    <tbody id = "clientTableBody" v-for= "c in clientList">
       <tr>
         <td>{{c.clientId}}</td>
         <td>{{c.clientName}}</td>
@@ -67,7 +67,7 @@
       <th>Comments</th>
     </tr>
       </thead>
-  <tbody id="commentTableBody" v-for="c in commentsList">
+  <tbody id="commentTableBody" v-for="c in commentList">
     <tr>
       <td>{{c.commentId}}</td>
       <td>{{c.clientId}}</td>
