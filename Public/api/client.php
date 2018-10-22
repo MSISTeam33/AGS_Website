@@ -7,4 +7,3 @@ require '../../app/common.php';
   $json = json_encode($clientArr, JSON_PRETTY_PRINT);
   header('Content-type: application/json');
   echo $json;
-//

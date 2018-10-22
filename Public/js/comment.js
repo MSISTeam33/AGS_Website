@@ -2,13 +2,12 @@ var commentApp = new Vue({
   el: '#commentPage',
   data: {
     commentList: [{
-      commentId:'',
-      clientId:'',
-      commentSection:''
+      'commentId':'',
+      'clientId':'',
+      'commentSection':''
       }]
   },
   methods: {
-
     fetchComments () {
       fetch('api/comment.php')
       .then( response => response.json() )
