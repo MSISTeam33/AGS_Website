@@ -9,15 +9,20 @@ var clientApp = new Vue({
       'gicsSubIndustry':'',
       'headquarters':''
       }]
-},
+  },
+  methods: {
 
+    fetchClients () {
+      fetch('api/client.php')
+      .then( response => response.json() )
+      .then( json => {clientApp.clientList = json} )
+      .catch( err => {
+        console.log('CLIENT FETCH ERROR:');
+        console.log(err);
+      })
+    }, //end of fetch clients
+  }, //end of methods
   created () {
-    fetch('api/client.php')
-    .then(response => response.json())
-    .then(json => {clientApp.clientList = json;})
-    .catch(err=> {
-      console.log('CLIENT FETCH ERROR:');
-      console.log(err);
-    });
-}
+    this.fetchClients();
+  }
 })
