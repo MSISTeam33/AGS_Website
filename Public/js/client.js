@@ -1,7 +1,14 @@
 var clientApp = new Vue({
-  el: '#clientTable',
+  el: '#clientPage',
   data: {
-    clientList: []
+    clientList: [{
+      'clientId' : '',
+      'clientName' :'',
+      'clientDescription':'',
+      'gicsSector':'',
+      'gicsSubIndustry':'',
+      'headquarters':''
+      }]
 },
 
   created () {
