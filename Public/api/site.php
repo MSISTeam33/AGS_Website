@@ -1,5 +1,6 @@
 <?php
 
+
 require '../../app/common.php';
 
 $clientId = intval($_GET['clientId'] ?? 0);

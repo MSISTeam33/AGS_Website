@@ -1,4 +1,4 @@
-<?php
+<?php 
 class Client
 {
   public $clientId;
@@ -16,7 +16,7 @@ class Client
     $this->gicsSubIndustry = $row['gicsSubIndustry'];
     $this->headquarters = $row['headquarters'];
   }
-  
+
   public static function fetchAll() {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
