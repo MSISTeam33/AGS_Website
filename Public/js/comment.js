@@ -1,5 +1,5 @@
 var commentApp = new Vue({
-  el: '#clientPage',
+  el: '#commentPage',
   data: {
     commentList: [{
       commentId:'',
