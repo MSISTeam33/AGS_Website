@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/Final Project.css" />
+<link rel="stylesheet" href="css/finalProject.css" />
 
 <title>Client Information</title>
 </head>
@@ -69,8 +69,8 @@
       <th>Comments</th>
     </tr>
   </thead>
-  <tbody id="commentTableBody">
-    <tr v-for="co in commentList">
+  <tbody id="commentTableBody" v-if="commentList">
+    <tr v-for="co in commentList" >
       <td>{{co.commentId}}</td>
       <td>{{co.clientId}}</td>
       <td>{{co.commentSection}}</td>
@@ -83,7 +83,7 @@
         <table>
           <tr>
             <td><label>Enter Comment:</label></td>
-            <td><input id="comment" type="textbox" v-model="commentList.commentSection"></td>
+            <td><input id="commentSection" type="textbox" v-model="commentList.commentSection"></td>
             <td><label>Enter Client Id:</label></td>
             <td><input id="clientId" type="textbox" v-model="commentList.clientId"></td>
           </tr>

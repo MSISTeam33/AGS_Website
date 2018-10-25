@@ -9,9 +9,10 @@ var commentApp = new Vue({
   },
   methods: {
     getEmptyForm() {
-      document.getElementById('comment').value = '';
+      document.getElementById('commentSection').value = '';
       document.getElementById('clientId').value = '';
     }, //end of get empty form
+    
     fetchComments () {
       fetch('api/comment.php')
       .then( response => response.json() )
@@ -23,7 +24,7 @@ var commentApp = new Vue({
     }, //end of fetch comments
 
     insertNewComment(e) {
-      const com = (document.getElementById('comment').value);
+      const com = (document.getElementById('commentSection').value);
       const cliId = (document.getElementById('clientId').value);
       console.log(com);
       console.log(cliId);
