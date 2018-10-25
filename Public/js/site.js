@@ -17,7 +17,7 @@ var siteApp = new Vue({
     }],
   },
   methods:{
-    fetchSites () {
+    fetchSites() {
       fetch('api/site.php')
       .then( response => response.json() )
       .then( json => {siteApp.site = json} )
