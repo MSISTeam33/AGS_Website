@@ -21,6 +21,7 @@ var commentApp = new Vue({
         console.log(err);
       })
     }, //end of fetch comments
+
     insertNewComment(e) {
       const com = (document.getElementById('comment').value);
       const cliId = (document.getElementById('clientId').value);
@@ -32,7 +33,7 @@ var commentApp = new Vue({
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
-        body: JSON.stringify({comment:com, clientId:cliId})
+        body: JSON.stringify({'commentSection':com, 'clientId':cliId})
       })
       .then( response => response.json() )
       .then( json => {console.log(json)}) //broken here
