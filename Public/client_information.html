@@ -69,12 +69,14 @@
       <th>Comments</th>
     </tr>
   </thead>
-  <tbody id="commentTableBody" v-if="commentList">
+  <tbody id="commentTableBody">
+    <template v-if="commentList">
     <tr v-for="co in commentList" >
       <td>{{co.commentId}}</td>
       <td>{{co.clientId}}</td>
       <td>{{co.commentSection}}</td>
     </tr>
+     </template>
   </tbody>
 </table>
 
