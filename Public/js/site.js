@@ -1,31 +1,34 @@
-var clientApp = new Vue({
+var siteApp = new Vue({
   el: '#sitePage',
   data: {
-    site: [], // All the teams
-},
+    site: [{
+      siteId:'',
+      clientId:'',
+      siteName:'',
+      siteDescription:'',
+      capacity:'',
+      commericialDate:'',
+      addrLine1:'',
+      addrLine2:'',
+      addrCity:'',
+      addrState:'',
+      addrZip:'',
+      addrCountry:''
+    }],
+  },
+  methods:{
+    fetchSites () {
+      fetch('api/site.php')
+      .then( response => response.json() )
+      .then( json => {siteApp.site = json} )
+      .catch( err => {
+        console.log('SITE FETCH ERROR:');
+        console.log(err);
+      })
+    } //end of fetch comments
+}, //end of methods
 
-methods: {
-      fetch('api/site.php', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8"
-      },
-      body: s
-    })
-    .then( response => response.json())
-    .then( json => {this.site.push(json)})
-    .catch( err => {
-      console.error('WORK POST ERROR:');
-      console.error(err);
-    })
-
-  created () {
-    fetch('api/site.php')
-    .then(response => response.json())
-    .then(json => {this.site = json; console.log(json);})
-    .catch(err=> {
-      console.log('COMMENT FETCH ERROR:');
-      console.log(err);
-    }
-  )}
+created () {
+  this.fetchSites();
+}//end of created
 })

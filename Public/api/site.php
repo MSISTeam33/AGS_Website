@@ -1,14 +1,11 @@
 <?php
-
-
+//API END POINT
 require '../../app/common.php';
 
-$clientId = intval($_GET['clientId'] ?? 0);
 
-// 1. Go to the database and get all work associated with the $taskId
-$siteArr = Site::getSiteByClientId($clientId);
-// 2. Convert to JSON
-$json = json_encode($siteArr, JSON_PRETTY_PRINT);
-// 3. Print
-header('Content-Type: application/json');
-echo $json;
+  //fetch all contents of the table "comments" into the "$comments" array
+  $siteArr=Site::fetchSites(); //array
+  //convert to json and print
+  $json = json_encode($siteArr, JSON_PRETTY_PRINT);
+  header('Content-type: application/json');
+  echo $json;
