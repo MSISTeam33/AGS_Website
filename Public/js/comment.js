@@ -36,7 +36,7 @@ var commentApp = new Vue({
         body: JSON.stringify({'commentSection':com, 'clientId':cliId})
       })
       .then( response => response.json() )
-      .then( json => {console.log(json)}) //broken here
+      .then( json => {console.log(json)}) //working till here
       .then(json => {commentApp.commentList = json})
       .catch( err => {
         console.error('COMMENT POST ERROR:');
