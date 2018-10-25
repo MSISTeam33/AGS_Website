@@ -2,7 +2,8 @@
 
 require '../../app/common.php';
 
-  $clientArr=Client::fetchClients(); //array
+  //gets data that is fetched by the Client Model from the SQL database
+  $clientArr=Client::fetchClients(); 
   //convert to json and print
   $json = json_encode($clientArr, JSON_PRETTY_PRINT);
   header('Content-type: application/json');
