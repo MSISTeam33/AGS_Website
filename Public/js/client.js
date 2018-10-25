@@ -11,7 +11,7 @@ var clientApp = new Vue({
       }]
   },
   methods: {
-
+    //works with HTML page to get data from API
     fetchClients () {
       fetch('api/client.php')
       .then( response => response.json() )
@@ -22,7 +22,9 @@ var clientApp = new Vue({
       })
     }, //end of fetch clients
   }, //end of methods
+
   created () {
+    //works with HTML page to get data from API
     this.fetchClients();
   }
 })
