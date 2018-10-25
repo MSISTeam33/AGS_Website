@@ -89,7 +89,7 @@
 </div>
 </main>
 <main id="turbinePage">
-<div class="panel-group" id="accordion">
+<div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -112,7 +112,7 @@
       <th>Maintenance Interval</th>
     </tr>
       </thead>
-  <tbody id= "turbineTableBody" v-for="t in turbine">
+  <!--tbody id= "turbineTableBody" v-for="t in turbine">
     <tr>
       <td>{{t.turbineId}}</td>
       <td>{{t.turbineName}}</td>
@@ -121,12 +121,12 @@
       <td>{{t.rampUpTime}}</td>
       <td>{{t.maintenanceInterval}}</td>
     </tr>
-  </tbody>
+  </tbody-->
 </table>
 </div>
 </div>
 </div>
-<div class="panel-group" id="accordion">
+<div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -152,7 +152,7 @@
       <th>Starts</th>
     </tr>
       </thead>
-  <tbody id= "timeSeriesTableBody" v-for="k in sensorTimeSeries">
+  <!--tbody id= "timeSeriesTableBody" v-for="k in sensorTimeSeries">
     <tr>
       <td>{{k.dataCollectedDate}}</td>
       <td>{{k.output}}</td>
@@ -164,7 +164,7 @@
       <td>{{k.trips}}</td>
       <td>{{k.starts}}</td>
     </tr>
-  </tbody>
+  </tbody-->
 </table>
 </div>
 </div>
@@ -188,6 +188,6 @@
    <!-- development version, includes helpful console warnings -->
    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    <script src="js/site.js"></script>
-   <script src=""></script>
-   <script src=""></script>
+   <script src="#"></script>
+   <script src="#"></script>
 </html>
