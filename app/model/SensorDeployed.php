@@ -19,7 +19,7 @@ class SensorDeployed
 
   public static function fetchSensors() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'SELECT * FROM serverDeployed';
+    $sql = 'SELECT * FROM sensorDeployed';
     $statement = $db->prepare($sql);
     $success = $statement->execute();
     $arr = [];
