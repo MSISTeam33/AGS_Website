@@ -16,7 +16,7 @@ var turbineApp = new Vue({
   methods: {
     //works with HTML page to get data from API
     fetchTurbines () {
-      fetch('api/turbine.php')
+      fetch('api/turbineInfo.php')
       .then( response => response.json() )
       .then( json => {turbineApp.turbineList = json} )
       .catch( err => {
