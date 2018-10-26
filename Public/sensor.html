@@ -1,4 +1,6 @@
 <!doctype html>
+<!--Page to show information about sensors deployed on a particular turbine-->
+
 <html lang="en">
 
 <head>
@@ -32,35 +34,26 @@
         </div>
     </header>
 
-    <main id="clientPage">
-        <h1>Site Information</h1>
-        <table id="siteTable" class="table table-striped table-sm table-hover">
+    <main id="sensorPage">
+        <h1>Sensor Information</h1>
+        <table id="sensorDeployedTable" class="table table-striped table-sm table-hover">
             <thead>
                 <tr>
-                  <th>Site ID</th>
-                  <th>Client ID</th>
-                  <th>Site Name</th>
+                  <th>Sensor Deployed Id</th>
+                  <th>Sensor Id</th>
+                  <th>Turbine Deployed Id</th>
                   <th>Site Description</th>
-                  <th>Primary Contact</th>
-                  <th>Capacity</th>
-                  <th>Commerical Date</th>
-                  <th>Address</th>
-                </tr>
+                  <th>Serial Number</th>
+                  <th>Deployed Date</th>
+                  </tr>
             </thead>
-            <tbody id= "siteTableBody" v-for="s in site">
+            <tbody id= "sensorDeployedTableBody" v-for="s in sensorList">
               <tr>
-                <td>{{s.siteId}}</td>
-                <td>{{s.clientId}}</td>
-                <td>{{s.siteName}}</td>
-                <td>{{s.siteDescription}}</td>
-                <td>{{s.primaryContact}}</td>
-                <td>{{s.capacity}}</td>
-                <td>{{s.commercialDate}}</td>
-                <td>{{s.addrLine1}}</td>
-                <td>{{s.addrCity}}</td>
-                <td>{{s.addrState}}</td>
-                <td>{{s.addrZip}}</td>
-                <td>{{s.addrCountry}}</td>
+                <td>{{s.sensorDeployedId}}</td>
+                <td>{{s.sensorId}}</td>
+                <td>{{s.turbineDeployedId}}</td>
+                <td>{{s.serialNumber}}</td>
+                <td>{{s.deployedDate}}</td>
               </tr>
             </tbody>
         </table>
@@ -78,7 +71,7 @@
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/site.js"></script>
+    <script src="js/sensorDeployed.js"></script>
 </footer>
 
 </html>
