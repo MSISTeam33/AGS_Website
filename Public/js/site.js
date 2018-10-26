@@ -1,7 +1,7 @@
 var siteApp = new Vue({
   el: '#sitePage',
   data: {
-      'siteList': [{
+      siteList: [{
         'siteId' : '',
         'clientId' : '',
         'siteName' : '',
