@@ -1,5 +1,5 @@
 <?php
-class Client
+class Turbine
 {
   public $turbineDeployedId;
   public $turbineId;
