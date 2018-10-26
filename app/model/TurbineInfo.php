@@ -25,7 +25,7 @@ class Turbine
 
   public static function fetchTurbines() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'SELECT * FROM turbine';
+    $sql = 'SELECT * FROM turbineDeployed';
     $statement = $db->prepare($sql);
     $success = $statement->execute();
     $arr = [];
