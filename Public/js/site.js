@@ -21,7 +21,7 @@ var siteApp = new Vue({
     fetchSites () {
       fetch('api/site.php')
       .then( response => response.json() )
-      .then( json => {sitetApp.siteList = json} )
+      .then( json => {siteApp.siteList = json} )
       .catch( err => {
         console.log('SITE FETCH ERROR:');
         console.log(err);
