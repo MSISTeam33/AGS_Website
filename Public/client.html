@@ -46,7 +46,7 @@
                 </tr>
             </thead>
             <tbody id="clientTableBody">
-                <tr v-for="c in clientList">
+                <tr v-for="c in clientList" @click="gotoSite(c.clientId)">
                     <td>{{c.clientId}}</td>
                     <td>{{c.clientName}}</td>
                     <td>{{c.clientDescription}}</td>

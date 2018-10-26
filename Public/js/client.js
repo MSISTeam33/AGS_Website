@@ -21,6 +21,9 @@ var clientApp = new Vue({
         console.log(err);
       })
     }, //end of fetch clients
+    gotoSite(cid) {
+      window.location = 'site.html?clientId=' + cid;
+    } //end of go to Site
   }, //end of methods
 
   created () {
