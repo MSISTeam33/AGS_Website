@@ -12,7 +12,7 @@ var sensorApp = new Vue({
   methods: {
     //works with HTML page to get data from API
     fetchSensors () {
-      fetch('api/sensor.php')
+      fetch('api/sensorDeployed.php')
       .then( response => response.json() )
       .then( json => {sensorApp.sensorList = json} )
       .catch( err => {
