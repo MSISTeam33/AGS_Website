@@ -1,7 +1,7 @@
 <?php
 class Site
 {
-  public $siteId;
+	public $siteId;
   public $clientId;
   public $siteName;
   public $siteDescription;
@@ -14,8 +14,9 @@ class Site
   public $addrZip;
   public $addrCountry;
 
-  public function __construct($row) {
-    $this->siteId = isset($row['siteId']) ? intval($row['siteId']) : null;
+	public function __construct($row)
+	{
+		$this->siteId = isset($row['siteId']) ? intval($row['siteId']) : null;
     $this->clientId = $row['clientId'];
     $this->siteName = $row['siteName'];
     $this->siteDescription = $row['siteDescription'];
@@ -27,46 +28,20 @@ class Site
     $this->addrState = $row['addrState'];
     $this->addrZip = $row['addrZip'];
     $this->addrCountry = $row['addrCountry'];
-  }
+	}
 
-  public static function fetchSites() {
-    // 1. Connect to the database
-    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    // 2. Prepare the query
-    $sql = 'SELECT * FROM sites';
-    $statement = $db->prepare($sql);
-    // 3. Run the query
-    $success = $statement->execute();
-    // 4. Handle the results
-    $arr = [];
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      // 4.a. For each row, make a new work object
-      $siteItem =  new Site($row);
-      array_push($arr, $siteItem);
-    }
-    return $arr;
-  }
-
-/*
-  public static function getSiteByClientId(int $clientId) {
-    // 1. Connect to the database
-    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    // 2. Prepare the query
-    $sql = 'SELECT * FROM site WHERE clientId = ?';
-    $statement = $db->prepare($sql);
-    // 3. Run the query
-    $success = $statement->execute(
-        [$clientId]
-    );
-    // 4. Handle the results
-    $arr = [];
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      // 4.a. For each row, make a new work object
-      $siteItem =  new Site($row);
-      array_push($arr, $siteItem);
-    }
-    // 4.b. return the array of work objects
-    return $arr;
-  }
-  */
+  public static function fetchSites()
+	{
+		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
+		$sql = 'SELECT * FROM sites;';
+		$statement = $db->prepare($sql);
+		$success = $statement->execute();
+		$arr = [];
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$siteItem = new Site($row);
+			array_push($arr, $siteItem);
+		}
+		return $arr;
+	}
 }
