@@ -1,19 +1,19 @@
 var siteApp = new Vue({
   el: '#sitePage',
   data: {
-    siteList: [{
-      siteId : '',
-      clientId : '',
-      siteName :'',
-      siteDescription:'',
-      primaryContact:'',
-      capacity:'',
-      commercialDate:'',
-      addrLine1:'',
-      addrCity:'',
-      addrState:'',
-      addrZip:'',
-      addrCountry:''
+      'siteList': [{
+        'siteId' : '',
+        'clientId' : '',
+        'siteName' : '',
+        'siteDescription': '',
+        'primaryContact':'',
+        'capacity':'',
+        'commercialDate':'',
+        'addrLine1':'',
+        'addrCity':'',
+        'addrState':'',
+        'addrZip':'',
+        'addrCountry':''
       }]
   },
   methods: {

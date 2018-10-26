@@ -33,7 +33,7 @@ class Site
   public static function fetchSites()
 	{
 		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
-		$sql = 'SELECT * FROM sites;';
+		$sql = 'SELECT * FROM site;';
 		$statement = $db->prepare($sql);
 		$success = $statement->execute();
 		$arr = [];
