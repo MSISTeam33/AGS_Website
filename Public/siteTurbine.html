@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="css/siteTurbine.css" />
+
+    <title>Site Information</title>
+</head>
+<body>
+  <!-- Container -->
+  <div class="container">
+    <!-- Table -->
+    <div class="tabular-data module">
+
+      <!-- Table Head -->
+      <div class="data-group data-header hidden-sm hidden-xs">
+        <div class="row">
+          <div class="col-lg-1 col-md-1"><strong class="uppercase">Site ID</strong></div>
+          <div class="col-lg-3 col-md-4"><strong class="uppercase">Site Name</strong></div>
+          <div class="col-lg-8 col-md-7"><strong class="uppercase">Site Description</strong></div>
+          <div class="col-lg-2 col-md-3"><strong class="uppercase">Primary Contact</strong></div>
+          <div class="col-lg-1 col-md-1"><strong class="uppercase">Capacity</strong></div>
+          <div class="col-lg-1 col-md-1"><strong class="uppercase">Commercial Date</strong></div>
+          <div class="col-lg-2 col-md-3"><strong class="uppercase">Address</strong></div>
+        </div>
+      </div>
+      <!-- Table Head -->
+      <!-- Table Body -->
+      <div id= "siteTableBody" v-for="s in siteList">
+        <!-- Table Row -->
+        <div class="data-group">
+          <div class="row">
+            <div class="data-expands">
+              <div class="col-lg-1 col-md-1">{{s.siteId}}</div>
+              <div class="col-lg-3 col-md-4"><span class="title">{{s.siteName}}</span></div>
+              <div class="col-lg-8 col-md-7">{{s.siteDescription}}</div>
+              <div class="col-lg-2 col-md-3">{{s.primaryContact}}</div>
+              <div class="col-lg-1 col-md-1">{{s.capacity}}</div>
+              <div class="col-lg-1 col-md-1">{{s.commercialDate}}</div>
+              <div class="col-lg-2 col-md-3">{{s.addrLine1}} , {{s.addrCity}} , {{s.addrState}} , {{s.addrZip}} , {{s.addrCountry}}</div>
+              <div class="col-lg-3 col-md-4"><div class="uppercase"><strong><i class="fa fa-wrench"></i> View Turbines</strong>
+                  <span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span>
+              </div>
+              </div>
+            </div>
+            <div class="expandable">
+              <div class="row">
+                <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
+                  <p>Just once I'd like to eat dinner with a celebrity who isn't bound and gagged. But, like most politicians, he promised more than he could deliver. If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.</p>
+                  <p>Tell her you just want to talk. It has nothing to do with mating. Well I'da done better, but it's plum hard pleading a case while awaiting trial for that there incompetence. Is that a cooking show? Bender! Ship! Stop bickering or I'm going to come back there and change your opinions manually!</p>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                  <div class="row">
+                    <div class="col-xs-12 visible-sm visible-xs"><hr></div>
+                    <div class="col-xs-6">Technician Labor</div>
+                    <div class="col-xs-6 text-right">2,400.00</div>
+                    <div class="col-xs-6">Parts</div>
+                    <div class="col-xs-6 text-right">4,500.00</div>
+                    <div class="col-xs-6">Inspection</div>
+                    <div class="col-xs-6 text-right">400.00</div>
+                    <div class="col-xs-12"><hr></div>
+                    <div class="col-xs-6">Total</div>
+                    <div class="col-xs-6 text-right">$7,300.00</div>
+                    <div class="col-xs-12"><hr></div>
+                    <div class="col-xs-6"><a href="#" class="btn btn-black"><i class="fa fa-phone"></i> Contact</a></div>
+                    <div class="col-xs-6 text-right"><a href="#" class="btn btn-green"><i class="fa fa-check-circle-o"></i> Approve</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Table Row -->
+      </div>
+      <!-- Table Body -->
+
+    </div>
+    <!-- Table -->
+  </div>
+  <!-- Container -->
+</body>
+
+<footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- moment.js via CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/siteTurbine.js"></script>
+    <script src="js/site.js"></script>
+</footer>
+
+</html>
