@@ -48,43 +48,44 @@
                            </div>
                         </div>
                      </div>
-                     <!-- Site specific Turbine Info -->
-                     <div class="expandable" id="turbinePage" v-for="t in turbineList">
-                        <div class="row">
-                           <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
-                              <p>Turbine Deployed Id : {{t.turbineDeployedId}} <br/>
-                                 Turbine Id : {{t.turbineId}} <br/>
-                                 Serial Number : {{t.serialNumber}} <br/>
-                                 Deplyed Date : {{t.deployedDate}} <br/>
-                              </p>
-                           </div>
-                           <div class="col-lg-3 col-md-4">
-                              <div class="row">
-                                 <div class="col-xs-12 visible-sm visible-xs">
-                                    <hr>
-                                 </div>
-                                 <div class="col-xs-6">Total Fired Hours</div>
-                                 <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div>
-                                 <div class="col-xs-6">Total Starts</div>
-                                 <div class="col-xs-6 text-right">{{t.totalStarts}}</div>
-                                 <div class="col-xs-6">Last Planned Outage Date</div>
-                                 <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div>
-                                 <div class="col-xs-6">Last Unlanned Outage Date</div>
-                                 <div class="col-xs-6 text-right">{{t.lastUnplannedOutageDate}}</div>
-                                 <div class="col-xs-12">
-                                    <hr>
-                                 </div>
-                                 <div class="col-xs-6"><a href="#" class="btn btn-black"><i class="fa fa-phone"></i> Contact</a></div>
-                                 <div class="col-xs-6 text-right"><a href="#" class="btn btn-green"><i class="fa fa-check-circle-o"></i> Approve</a></div>
+                  </div>
+                </div>
+             </div>
+                  <!-- Site specific Turbine Info -->
+                  <div class="expandable" id="turbinePage" v-for="t in turbineList">
+                     <div class="row">
+                        <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
+                           <p>Turbine Deployed Id : {{t.turbineDeployedId}} <br/>
+                              Turbine Id : {{t.turbineId}} <br/>
+                              Serial Number : {{t.serialNumber}} <br/>
+                              Deplyed Date : {{t.deployedDate}} <br/>
+                           </p>
+                        </div>
+                        <div class="col-lg-3 col-md-4">
+                           <div class="row">
+                              <div class="col-xs-12 visible-sm visible-xs">
+                                 <hr>
                               </div>
+                              <div class="col-xs-6">Total Fired Hours</div>
+                              <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div>
+                              <div class="col-xs-6">Total Starts</div>
+                              <div class="col-xs-6 text-right">{{t.totalStarts}}</div>
+                              <div class="col-xs-6">Last Planned Outage Date</div>
+                              <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div>
+                              <div class="col-xs-6">Last Unlanned Outage Date</div>
+                              <div class="col-xs-6 text-right">{{t.lastUnplannedOutageDate}}</div>
+                              <div class="col-xs-12">
+                                 <hr>
+                              </div>
+                              <div class="col-xs-6"><a href="#" class="btn btn-black"><i class="fa fa-phone"></i> Contact</a></div>
+                              <div class="col-xs-6 text-right"><a href="#" class="btn btn-green"><i class="fa fa-check-circle-o"></i> Approve</a></div>
                            </div>
                         </div>
                      </div>
-                     <!-- Site specific Turbine Info -->
                   </div>
-               </div>
-               <!-- Table Row -->
-            </div>
+                  <!-- Site specific Turbine Info -->
+
+            <!-- Table Row -->
             <!-- Table Body -->
          </div>
          <!-- Table -->
