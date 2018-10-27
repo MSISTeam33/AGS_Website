@@ -1,12 +1,3 @@
-// Expandable Data Table
-$('.data-expands').each(function(){
-	$(this).click(function(){
-		$(this).toggleClass('row-active');
-		$(this).parent().find('.expandable').toggleClass('row-open');
-		$(this).parent().find('.row-toggle').toggleClass('row-toggle-twist');
-	});
-});
-
 var siteApp = new Vue({
   el: '#sitePage',
   data: {
@@ -26,7 +17,13 @@ var siteApp = new Vue({
       }]
   },
   methods: {
-
+    showTurbines(){
+    	$(this).click(function(){
+    		$(this).toggleClass('row-active');
+    		$(this).parent().find('.expandable').toggleClass('row-open');
+    		$(this).parent().find('.row-toggle').toggleClass('row-toggle-twist');
+    	});
+    }
   }, //end of methods
 
   created () {
@@ -43,6 +40,9 @@ var siteApp = new Vue({
    .catch( err => {
      console.error('SITE FETCH ERROR:');
      console.error(err);
-   })
+   });
   }
-})
+});
+
+// Expandable Data Table
+$('.data-expands').each();
