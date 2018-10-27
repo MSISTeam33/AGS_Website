@@ -14,20 +14,22 @@ var turbineApp = new Vue({
       }]
   },
   methods: {
-    //works with HTML page to get data from API
-    fetchTurbines () {
-      fetch('api/turbineInfo.php')
-      .then( response => response.json() )
-      .then( json => {turbineApp.turbineList = json} )
-      .catch( err => {
-        console.log('TURBINE FETCH ERROR:');
-        console.log(err);
-      })
-    }, //end of fetch Turbine
+
   }, //end of methods
 
   created () {
-    //works with HTML page to get data from API
-    this.fetchTurbines();
+    // Do data fetch
+   const url = new URL(window.location.href);
+   const siteId = url.searchParams.get('siteId');
+   console.log('Site: '+ siteId);
+
+   // TODO: Fetch task-specific data
+   fetch('api/turbineInfo.php?siteId='+siteId)
+   .then( response => response.json() )
+   .then( json => {turbineApp.turbineList = json} )
+   .catch( err => {
+     console.error('TURBINE FETCH ERROR:');
+     console.error(err);
+   })
   }
 })

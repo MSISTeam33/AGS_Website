@@ -35,4 +35,19 @@ class Turbine
     }
     return $arr;
   }
+
+  public static function fetchTurbinesBySiteId(int $siteId)
+	{
+		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
+		$sql = 'SELECT * FROM turbineDeployed WHERE siteId=?;';
+		$statement = $db->prepare($sql);
+		$success = $statement->execute([$siteId]);
+		$arr = [];
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$turbineItem = new Site($row);
+			array_push($arr, $turbineItem);
+		}
+		return $arr;
+	}
 }

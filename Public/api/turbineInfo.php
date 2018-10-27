@@ -2,8 +2,12 @@
 
 require '../../app/common.php';
 
-  //gets data that is fetched by the Turbine Model from the SQL database
-  $turbineArr=Turbine::fetchTurbines();
+  $siteId = intval($_GET['siteId'] ?? 0);
+  if ($siteId < 1) {
+    throw new Exception('Invalid Site ID');
+  }
+  //gets data that is fetched by the TurbineInfo Model from the SQL database
+  $turbineArr=Site::fetchTurbinesBySiteId($siteId);
   //convert to json and print
   $json = json_encode($turbineArr, JSON_PRETTY_PRINT);
   header('Content-type: application/json');
