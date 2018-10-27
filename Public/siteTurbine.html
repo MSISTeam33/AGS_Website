@@ -48,28 +48,29 @@
                            </div>
                         </div>
                      </div>
-                     <div class="expandable">
+                     <!-- Site specific Turbine Info -->
+                     <div class="expandable" id="turbinePage" v-for="t in turbineList">
                         <div class="row">
                            <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
-                              <p>Just once I'd like to eat dinner with a celebrity who isn't bound and gagged. But, like most politicians, he promised more than he could deliver. If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right.</p>
-                              <p>Tell her you just want to talk. It has nothing to do with mating. Well I'da done better, but it's plum hard pleading a case while awaiting trial for that there incompetence. Is that a cooking show? Bender! Ship! Stop bickering or I'm going to come back there and change your opinions manually!</p>
+                              <p>Turbine Deployed Id : {{t.turbineDeployedId}} <br/>
+                                 Turbine Id : {{t.turbineId}} <br/>
+                                 Serial Number : {{t.serialNumber}} <br/>
+                                 Deplyed Date : {{t.deployedDate}} <br/>
+                              </p>
                            </div>
                            <div class="col-lg-3 col-md-4">
                               <div class="row">
                                  <div class="col-xs-12 visible-sm visible-xs">
                                     <hr>
                                  </div>
-                                 <div class="col-xs-6">Technician Labor</div>
-                                 <div class="col-xs-6 text-right">2,400.00</div>
-                                 <div class="col-xs-6">Parts</div>
-                                 <div class="col-xs-6 text-right">4,500.00</div>
-                                 <div class="col-xs-6">Inspection</div>
-                                 <div class="col-xs-6 text-right">400.00</div>
-                                 <div class="col-xs-12">
-                                    <hr>
-                                 </div>
-                                 <div class="col-xs-6">Total</div>
-                                 <div class="col-xs-6 text-right">$7,300.00</div>
+                                 <div class="col-xs-6">Total Fired Hours</div>
+                                 <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div>
+                                 <div class="col-xs-6">Total Starts</div>
+                                 <div class="col-xs-6 text-right">{{t.totalStarts}}</div>
+                                 <div class="col-xs-6">Last Planned Outage Date</div>
+                                 <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div>
+                                 <div class="col-xs-6">Last Unlanned Outage Date</div>
+                                 <div class="col-xs-6 text-right">{{t.lastUnplannedOutageDate}}</div>
                                  <div class="col-xs-12">
                                     <hr>
                                  </div>
@@ -79,6 +80,7 @@
                            </div>
                         </div>
                      </div>
+                     <!-- Site specific Turbine Info -->
                   </div>
                </div>
                <!-- Table Row -->
