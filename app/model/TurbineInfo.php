@@ -45,7 +45,7 @@ class TurbineInfo
 		$arr = [];
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 		{
-			$turbineItem = new Site($row);
+			$turbineItem = new TurbineInfo($row);
 			array_push($arr, $turbineItem);
 		}
 		return $arr;
