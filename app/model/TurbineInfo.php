@@ -1,5 +1,5 @@
 <?php
-class Turbine
+class TurbineInfo
 {
   public $turbineDeployedId;
   public $turbineId;
