@@ -61,4 +61,4 @@ var siteApp = new Vue({
      console.error(err);
    })
   }
-})
+});
