@@ -30,10 +30,7 @@ var siteApp = new Vue({
   methods: {
     loadTurbine(siteId)
     {
-      
-        $(this).toggleClass('row-active');
-        $(this).parent().find('.expandable').toggleClass('row-open');
-        $(this).parent().find('.row-toggle').toggleClass('row-toggle-twist');
+        
 
       // TODO: Fetch task-specific data
       fetch('api/turbineInfo.php?siteId='+siteId)
