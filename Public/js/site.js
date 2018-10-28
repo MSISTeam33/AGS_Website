@@ -28,7 +28,8 @@ var siteApp = new Vue({
       }]
   },
   methods: {
-    loadTurbine(siteId){
+    loadTurbine(siteId)
+    {
       $(this).click(function(){
         $(this).toggleClass('row-active');
         $(this).parent().find('.expandable').toggleClass('row-open');
