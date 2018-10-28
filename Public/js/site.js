@@ -30,8 +30,6 @@ var siteApp = new Vue({
   methods: {
     loadTurbine(siteId)
     {
-        
-
       // TODO: Fetch task-specific data
       fetch('api/turbineInfo.php?siteId='+siteId)
       .then( response => response.json() )
@@ -48,7 +46,6 @@ var siteApp = new Vue({
    const url = new URL(window.location.href);
    const clientId = url.searchParams.get('clientId');
    console.log('Client: '+ clientId);
-   //this.siteList.ClientId = clientId;
 
    // TODO: Fetch client-specific site
    fetch('api/site.php?clientId='+clientId)

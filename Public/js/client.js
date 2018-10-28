@@ -22,7 +22,7 @@ var clientApp = new Vue({
       })
     }, //end of fetch clients
     gotoSite(cid) {
-      window.location = 'site.html?clientId=' + cid;
+      window.location = 'siteTurbine.html?clientId=' + cid;
     } //end of go to Site
   }, //end of methods
 
