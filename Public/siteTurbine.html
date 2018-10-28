@@ -49,11 +49,14 @@
                            <div class="expandable" v-for="t in turbineList">
                               <div class="row">
                                  <div class="col-lg-6 col-md-6">
-                                    <p>Turbine Deployed Id : {{t.turbineDeployedId}} <br/>
-                                       Turbine Id : {{t.turbineId}} <br/>
-                                       Serial Number : {{t.serialNumber}} <br/>
-                                       Deplyed Date : {{t.deployedDate}} <br/>
-                                    </p>
+                                    <div class="col-xs-6">Turbine Deployed Id :</div>
+                                    <div class="col-xs-6 text-right">{{t.turbineDeployedId}}</div><br/>
+                                    <div class="col-xs-6">Turbine Id :</div>
+                                    <div class="col-xs-6 text-right">{{t.turbineId}}</div><br/>
+                                    <div class="col-xs-6">Serial Number :</div>
+                                    <div class="col-xs-6 text-right">{{t.serialNumber}}</div><br/>
+                                    <div class="col-xs-6">Deplyed Date :</div>
+                                    <div class="col-xs-6 text-right">{{t.deployedDate}}</div>
                                  </div>
                                  <div class="col-lg-6 col-md-6">
                                     <div class="row">
