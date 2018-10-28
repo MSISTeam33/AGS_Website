@@ -27,7 +27,7 @@ var siteApp = new Vue({
    console.log('Client: '+ clientId);
    //this.siteList.ClientId = clientId;
 
-   // TODO: Fetch task-specific data
+   // TODO: Fetch client-specific site
    fetch('api/site.php?clientId='+clientId)
    .then( response => response.json() )
    .then( json => {siteApp.siteList = json} )

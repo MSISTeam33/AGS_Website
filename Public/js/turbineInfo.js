@@ -1,5 +1,5 @@
 var turbineApp = new Vue({
-  el: '#turbinePage',
+  el: '#sitePage',
   data: {
       turbineList: [{
         turbineDeployedId :'',

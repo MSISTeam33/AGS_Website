@@ -45,49 +45,47 @@
                           <div class="col-lg-2 col-md-2">{{s.addrLine1}} , {{s.addrCity}} , {{s.addrState}} , {{s.addrZip}} , {{s.addrCountry}}</div>
                           <div class="col-lg-1 col-md-1"><div class="uppercase"><strong><i class="fa fa-wrench"></i> View Turbines</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div></div>
                        </div>
-                    </div>
-                  </div>
-                    <!-- Site specific Turbine Info -->
-                    <div id="turbinePage">
-                      <div v-for="t in turbineList">
-                        <div class="expandable" >
-                           <div class="row">
-                              <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
-                                 <p>Turbine Deployed Id : {{t.turbineDeployedId}} <br/>
-                                    Turbine Id : {{t.turbineId}} <br/>
-                                    Serial Number : {{t.serialNumber}} <br/>
-                                    Deplyed Date : {{t.deployedDate}} <br/>
-                                 </p>
-                              </div>
-                              <div class="col-lg-3 col-md-4">
-                                 <div class="row">
-                                    <div class="col-xs-12 visible-sm visible-xs">
-                                       <hr>
+                       <!-- Site specific Turbine Info -->
+
+                         <div v-for="t in turbineList">
+                           <div class="expandable" >
+                              <div class="row">
+                                 <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
+                                    <p>Turbine Deployed Id : {{t.turbineDeployedId}} <br/>
+                                       Turbine Id : {{t.turbineId}} <br/>
+                                       Serial Number : {{t.serialNumber}} <br/>
+                                       Deplyed Date : {{t.deployedDate}} <br/>
+                                    </p>
+                                 </div>
+                                 <div class="col-lg-3 col-md-4">
+                                    <div class="row">
+                                       <div class="col-xs-12 visible-sm visible-xs">
+                                          <hr>
+                                       </div>
+                                       <div class="col-xs-6">Total Fired Hours</div>
+                                       <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div>
+                                       <div class="col-xs-6">Total Starts</div>
+                                       <div class="col-xs-6 text-right">{{t.totalStarts}}</div>
+                                       <div class="col-xs-6">Last Planned Outage Date</div>
+                                       <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div>
+                                       <div class="col-xs-6">Last Unlanned Outage Date</div>
+                                       <div class="col-xs-6 text-right">{{t.lastUnplannedOutageDate}}</div>
+                                       <div class="col-xs-12">
+                                          <hr>
+                                       </div>
+                                       <div class="col-xs-6"><a href="#" class="btn btn-black"><i class="fa fa-phone"></i> Contact</a></div>
+                                       <div class="col-xs-6 text-right"><a href="#" class="btn btn-green"><i class="fa fa-check-circle-o"></i> Approve</a></div>
                                     </div>
-                                    <div class="col-xs-6">Total Fired Hours</div>
-                                    <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div>
-                                    <div class="col-xs-6">Total Starts</div>
-                                    <div class="col-xs-6 text-right">{{t.totalStarts}}</div>
-                                    <div class="col-xs-6">Last Planned Outage Date</div>
-                                    <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div>
-                                    <div class="col-xs-6">Last Unlanned Outage Date</div>
-                                    <div class="col-xs-6 text-right">{{t.lastUnplannedOutageDate}}</div>
-                                    <div class="col-xs-12">
-                                       <hr>
-                                    </div>
-                                    <div class="col-xs-6"><a href="#" class="btn btn-black"><i class="fa fa-phone"></i> Contact</a></div>
-                                    <div class="col-xs-6 text-right"><a href="#" class="btn btn-green"><i class="fa fa-check-circle-o"></i> Approve</a></div>
                                  </div>
                               </div>
                            </div>
-                        </div>
-                      </div>
+                         </div>
+                       <!-- Site specific Turbine Info -->
                     </div>
-                    <!-- Site specific Turbine Info -->
+                  </div>
                  </div>
               </div>
               <!-- Table Row -->
-
             <!-- Table Body -->
          </div>
          <!-- Table -->
@@ -97,9 +95,9 @@
    <footer>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
       <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-      <script src="js/turbineInfo.js"></script>
-      <script src="js/site.js"></script>
 
+      <script src="js/site.js"></script>
+      <script src="js/turbineInfo.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <!-- moment.js via CDN-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
