@@ -14,10 +14,35 @@ var siteApp = new Vue({
         'addrState':'',
         'addrZip':'',
         'addrCountry':''
+      }],
+      turbineList: [{
+        'turbineDeployedId' :'',
+        'turbineId' :'',
+        'siteId' :'',
+        'serialNumber' :'',
+        'deployedDate' :'',
+        'totalFiredHours' :'',
+        'totalStarts' :'',
+        'lastPlannedOutageDate' :'',
+        'lastUnplannedOutageDate' :''
       }]
   },
   methods: {
-
+    loadTurbine($siteId){
+      $(this).click(function(){
+        $(this).toggleClass('row-active');
+        $(this).parent().find('.expandable').toggleClass('row-open');
+        $(this).parent().find('.row-toggle').toggleClass('row-toggle-twist');
+      });
+      // TODO: Fetch task-specific data
+      fetch('api/turbineInfo.php?siteId='+siteId)
+      .then( response => response.json() )
+      .then( json => {turbineApp.turbineList = json} )
+      .catch( err => {
+        console.error('TURBINE FETCH ERROR:');
+        console.error(err);
+      })
+    }
   }, //end of methods
 
   created () {
