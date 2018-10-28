@@ -33,9 +33,9 @@
             <div id="sitePage">
                <div id= "siteTableBody" >
                   <!-- Table Row -->
-                  <div class="data-group" v-for="s in siteList">
+                  <div class="data-group">
                      <div class="row">
-                        <div class="data-expands">
+                        <div class="data-expands" v-for="s in siteList">
                            <div class="col-lg-1 col-md-1" id="siteId">{{s.siteId}}</div>
                            <div class="col-lg-1 col-md-1"><span class="title">{{s.siteName}}</span></div>
                            <div class="col-lg-3 col-md-3">{{s.siteDescription}}</div>
