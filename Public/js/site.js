@@ -38,7 +38,7 @@ var siteApp = new Vue({
       // TODO: Fetch task-specific data
       fetch('api/turbineInfo.php?siteId='+siteId)
       .then( response => response.json() )
-      .then( json => {turbineApp.turbineList = json} )
+      .then( json => {siteApp.turbineList = json} )
       .catch( err => {
         console.error('TURBINE FETCH ERROR:');
         console.error(err);
