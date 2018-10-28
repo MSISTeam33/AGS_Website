@@ -31,109 +31,62 @@
             <!-- Table Head -->
             <!-- Table Body -->
             <div id="sitePage">
-              <div id= "siteTableBody" v-for="s in siteList">
-                 <!-- Table Row -->
-                 <div class="data-group" v-for="t in turbineList">
-                    <div class="row">
-                       <div class="data-expands">
-                          <div class="col-lg-1 col-md-1" id="siteId">{{s.siteId}}</div>
-                          <div class="col-lg-1 col-md-1"><span class="title">{{s.siteName}}</span></div>
-                          <div class="col-lg-3 col-md-3">{{s.siteDescription}}</div>
-                          <div class="col-lg-1 col-md-1">{{s.primaryContact}}</div>
-                          <div class="col-lg-1 col-md-1">{{s.capacity}}</div>
-                          <div class="col-lg-1 col-md-1">{{s.commercialDate}}</div>
-                          <div class="col-lg-2 col-md-2">{{s.addrLine1}} , {{s.addrCity}} , {{s.addrState}} , {{s.addrZip}} , {{s.addrCountry}}</div>
-                          <div class="col-lg-1 col-md-1"><div class="uppercase"><strong><i class="fa fa-wrench"></i> View Turbines</strong><span class="row-toggle" @click="loadTurbine(s.siteId);"><span class="horizontal"></span><span class="vertical"></span></span></div></div>
-                          <!-- Site specific Turbine Info -->
-                              <div class="expandable">
-                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                      <div class="col-xs-6">Turbine Deployed Id :</div>
-                                      <div class="col-xs-6 text-right">{{t.turbineDeployedId}}</div><br/>
-                                      <div class="col-xs-6">Turbine Id :</div>
-                                      <div class="col-xs-6 text-right">{{t.turbineId}}</div><br/>
-                                      <div class="col-xs-6">Serial Number :</div>
-                                      <div class="col-xs-6 text-right">{{t.serialNumber}}</div><br/>
-                                      <div class="col-xs-6">Deployed Date :</div>
-                                      <div class="col-xs-6 text-right">{{t.deployedDate}}</div><br/>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                          <div class="col-xs-6">Total Fired Hours :</div>
-                                          <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div><br/>
-                                          <div class="col-xs-6">Total Starts :</div>
-                                          <div class="col-xs-6 text-right">{{t.totalStarts}}</div><br/>
-                                          <div class="col-xs-6">Last Planned Outage Date :</div>
-                                          <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div><br/>
-                                          <div class="col-xs-6">Last Unlanned Outage Date :</div>
-                                          <div class="col-xs-6 text-right">{{t.lastUnplannedOutageDate}}</div>
-                                          <div class="col-xs-6"><a href="#" class="btn btn-black"><i class="fa fa-phone"></i> Contact</a></div>
-                                          <div class="col-xs-6 text-right"><a href="#" class="btn btn-green"><i class="fa fa-check-circle-o"></i> Approve</a></div>
-                                    </div>
-                           <div class="expandable">
-                              <div class="row">
-                                 <div class="col-lg-6 col-md-6">
-                                   <div class="col-xs-6">Turbine Deployed Id :</div>
-                                   <div class="col-xs-6 text-right">{{t.turbineDeployedId}}</div><br/>
-                                   <div class="col-xs-6">Turbine Id :</div>
-                                   <div class="col-xs-6 text-right">{{t.turbineId}}</div><br/>
-                                   <div class="col-xs-6">Serial Number :</div>
-                                   <div class="col-xs-6 text-right">{{t.serialNumber}}</div><br/>
-                                   <div class="col-xs-6">Deployed Date :</div>
-                                   <div class="col-xs-6 text-right">{{t.deployedDate}}</div><br/>
-                                 </div>
-                                 <div class="col-lg-6 col-md-6">
-                                       <div class="col-xs-6">Total Fired Hours :</div>
-                                       <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div><br/>
-                                       <div class="col-xs-6">Total Starts :</div>
-                                       <div class="col-xs-6 text-right">{{t.totalStarts}}</div><br/>
-                                       <div class="col-xs-6">Last Planned Outage Date :</div>
-                                       <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div><br/>
-                                       <div class="col-xs-6">Last Unlanned Outage Date :</div>
-                       </div>
-                       <!-- Site specific Turbine Info -->
-                           <div class="expandable" v-for="t in turbineList">
-                              <div class="row">
-                                 <div class="col-lg-6 col-md-6">
-                                    <div class="col-xs-6">Turbine Deployed Id :</div>
-                                    <div class="col-xs-6 text-right">{{t.turbineDeployedId}}</div><br/>
-                                    <div class="col-xs-6">Turbine Id :</div>
-                                    <div class="col-xs-6 text-right">{{t.turbineId}}</div><br/>
-                                    <div class="col-xs-6">Serial Number :</div>
-                                    <div class="col-xs-6 text-right">{{t.serialNumber}}</div><br/>
-                                    <div class="col-xs-6">Deplyed Date :</div>
-                                    <div class="col-xs-6 text-right">{{t.deployedDate}}</div>
-                                 </div>
-                                 <div class="col-lg-6 col-md-6">
-                                    <div class="row">
-                                       <div class="col-xs-12 visible-sm visible-xs">
-                                          <hr>
-                                       </div>
-                                       <div class="col-xs-6">Total Fired Hours</div>
-                                       <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div>
-                                       <div class="col-xs-6">Total Starts</div>
-                                       <div class="col-xs-6 text-right">{{t.totalStarts}}</div>
-                                       <div class="col-xs-6">Last Planned Outage Date</div>
-                                       <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div>
-                                       <div class="col-xs-6">Last Unlanned Outage Date</div>
-                                       <div class="col-xs-6 text-right">{{t.lastUnplannedOutageDate}}</div>
-                                       <div class="col-xs-6"><a href="#" class="btn btn-black"><i class="fa fa-phone"></i> Contact</a></div>
-                                       <div class="col-xs-6 text-right"><a href="#" class="btn btn-green"><i class="fa fa-check-circle-o"></i> Approve</a></div>
-                                 </div>
+               <div id= "siteTableBody" v-for="s in siteList">
+                  <!-- Table Row -->
+                  <div class="data-group" v-for="t in turbineList">
+                     <div class="row">
+                        <div class="data-expands">
+                           <div class="col-lg-1 col-md-1" id="siteId">{{s.siteId}}</div>
+                           <div class="col-lg-1 col-md-1"><span class="title">{{s.siteName}}</span></div>
+                           <div class="col-lg-3 col-md-3">{{s.siteDescription}}</div>
+                           <div class="col-lg-1 col-md-1">{{s.primaryContact}}</div>
+                           <div class="col-lg-1 col-md-1">{{s.capacity}}</div>
+                           <div class="col-lg-1 col-md-1">{{s.commercialDate}}</div>
+                           <div class="col-lg-2 col-md-2">{{s.addrLine1}} , {{s.addrCity}} , {{s.addrState}} , {{s.addrZip}} , {{s.addrCountry}}</div>
+                           <div class="col-lg-1 col-md-1">
+                              <div class="uppercase"><strong><i class="fa fa-wrench"></i> View Turbines</strong><span class="row-toggle" @click="loadTurbine(s.siteId);"><span class="horizontal"></span><span class="vertical"></span></span></div>
+                           </div>
+                        </div>
+                        <!-- Site specific Turbine Info -->
+                        <div class="expandable">
+                           <div class="row">
+                              <div class="col-lg-6 col-md-6">
+                                 <div class="col-xs-6">Turbine Deployed Id :</div>
+                                 <div class="col-xs-6 text-right">{{t.turbineDeployedId}}</div>
+                                 <br/>
+                                 <div class="col-xs-6">Turbine Id :</div>
+                                 <div class="col-xs-6 text-right">{{t.turbineId}}</div>
+                                 <br/>
+                                 <div class="col-xs-6">Serial Number :</div>
+                                 <div class="col-xs-6 text-right">{{t.serialNumber}}</div>
+                                 <br/>
+                                 <div class="col-xs-6">Deployed Date :</div>
+                                 <div class="col-xs-6 text-right">{{t.deployedDate}}</div>
+                                 <br/>
                               </div>
-                              <!-- Site specific Turbine Info -->
-                       </div>
-
-                    </div>
+                              <div class="col-lg-6 col-md-6">
+                                 <div class="col-xs-6">Total Fired Hours :</div>
+                                 <div class="col-xs-6 text-right">{{t.totalFiredHours}}</div>
+                                 <br/>
+                                 <div class="col-xs-6">Total Starts :</div>
+                                 <div class="col-xs-6 text-right">{{t.totalStarts}}</div>
+                                 <br/>
+                                 <div class="col-xs-6">Last Planned Outage Date :</div>
+                                 <div class="col-xs-6 text-right">{{t.lastPlannedOutageDate}}</div>
+                                 <br/>
+                                 <div class="col-xs-6">Last Unlanned Outage Date :</div>
+                                 <div class="col-xs-6 text-right">{{t.lastUnplannedOutageDate}}</div>
+                                 <div class="col-xs-6"><a href="#" class="btn btn-black"><i class="fa fa-phone"></i> Contact</a></div>
+                                 <div class="col-xs-6 text-right"><a href="#" class="btn btn-green"><i class="fa fa-check-circle-o"></i> Approve</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- Site specific Turbine Info -->
+                     </div>
                   </div>
-                 </div>
-              </div>
+                  <!-- Table Row -->
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-              <!-- Table Row -->
             <!-- Table Body -->
          </div>
          <!-- Table -->
@@ -141,18 +94,13 @@
       <!-- Container -->
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
       <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-
       <script src="js/site.js"></script>
       <script src="js/siteTurbine.js"></script>
-
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <!-- moment.js via CDN-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
       <!-- development version, includes helpful console warnings -->
    </body>
    <footer>
-
-
-
    </footer>
 </html>
