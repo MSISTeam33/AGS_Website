@@ -38,7 +38,7 @@ var siteApp = new Vue({
         console.error('TURBINE FETCH ERROR:');
         console.error(err);
       })
-
+    }
   }, //end of methods
 
   created () {

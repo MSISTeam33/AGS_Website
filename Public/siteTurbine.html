@@ -31,10 +31,10 @@
             <!-- Table Head -->
             <!-- Table Body -->
             <div id="sitePage">
-               <div id="siteTableBody">
+               <div id="siteTableBody" v-for="s in siteList">
                   <!-- Table Row -->
-                  <div class="data-group"  v-for="s in siteList">
-                     <div class="row" v-for="t in turbineList">
+                  <div class="data-group" v-for="t in turbineList">
+                     <div class="row">
                         <div class="data-expands">
                            <div class="col-lg-1 col-md-1" id="siteId">{{s.siteId}}</div>
                            <div class="col-lg-1 col-md-1"><span class="title">{{s.siteName}}</span></div>
@@ -44,7 +44,7 @@
                            <div class="col-lg-1 col-md-1">{{s.commercialDate}}</div>
                            <div class="col-lg-2 col-md-2">{{s.addrLine1}} , {{s.addrCity}} , {{s.addrState}} , {{s.addrZip}} , {{s.addrCountry}}</div>
                            <div class="col-lg-1 col-md-1">
-                              <div class="uppercase"><strong><i class="fa fa-wrench"></i> View Turbines</strong><span class="row-toggle" @click="loadTurbine(s.siteId)"><span class="horizontal"></span><span class="vertical"></span></span></div>
+                              <div class="uppercase"><strong><i class="fa fa-wrench"></i> View Turbines</strong><span class="row-toggle" @click="loadTurbine(s.siteId);"><span class="horizontal"></span><span class="vertical"></span></span></div>
                            </div>
                         </div>
                         <!-- Site specific Turbine Info -->
