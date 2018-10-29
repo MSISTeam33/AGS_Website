@@ -31,7 +31,9 @@ var siteApp = new Vue({
     loadTurbine(event) //siteId)
     {
       var el = event.target;
+      consoe.log('clicked', event.target);
       var siteId = el.dataset.siteId;
+      console.log(el.dataset);
       //log
 
       // TODO: Fetch task-specific data
