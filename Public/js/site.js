@@ -31,8 +31,7 @@ var siteApp = new Vue({
     loadTurbine(event, sid) //siteId)
     {
       var el = event.target;
-      console.log('clicked', event.target, 'sid', sid);
-      var siteId = el.dataset['siteId'];
+      var siteId = sid;
       console.log(el.dataset, siteId);
       //log
 
