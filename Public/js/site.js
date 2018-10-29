@@ -47,8 +47,8 @@ var siteApp = new Vue({
       // get the clicked element
       $(el).toggleClass('row-active');
 
-  		$(el).parent().find('.expandable').toggleClass('row-open');
-  		$(el).parent().find('.row-toggle').toggleClass('row-toggle-twist');
+  		$(el).parents('.row').find('.expandable').toggleClass('row-open');
+  		$(el).parents('.row').find('.row-toggle').toggleClass('row-toggle-twist');
     }
   }, //end of methods
 
