@@ -30,7 +30,7 @@ var siteApp = new Vue({
   methods: {
     loadTurbine(event, sid) //siteId)
     {
-      var el = event.target;
+      var el = event.currentTarget;
       var siteId = sid;
       console.log(el, siteId);
       //log
@@ -46,7 +46,7 @@ var siteApp = new Vue({
 
       // get the clicked element
       $(el).toggleClass('row-active');
-      
+
   		$(el).parent().find('.expandable').toggleClass('row-open');
   		$(el).parent().find('.row-toggle').toggleClass('row-toggle-twist');
     }
