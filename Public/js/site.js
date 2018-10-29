@@ -28,12 +28,8 @@ var siteApp = new Vue({
       }]
   },
   methods: {
-    loadTurbine(event) //siteId)
+    loadTurbine(siteId)
     {
-      var el = event.target;
-      var siteId = el.dataset.siteId;
-      //log
-
       // TODO: Fetch task-specific data
       fetch('api/turbineInfo.php?siteId='+siteId)
       .then( response => response.json() )
@@ -43,11 +39,6 @@ var siteApp = new Vue({
         console.error(err);
       })
 
-      // get the clicked element
-      $(el).toggleClass('row-active');
-  		$(el).parent().parent().parent().parent().find('.expandable').toggleClass('row-open');
-  		$(el).parent().parent().parent().parent().find('.row-toggle').toggleClass('row-toggle-twist');
-    }
   }, //end of methods
 
   created () {
