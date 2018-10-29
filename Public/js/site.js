@@ -15,7 +15,7 @@ var siteApp = new Vue({
         'addrZip':'',
         'addrCountry':''
       }],
-      turbineList: [{
+      turbineList: {
         'turbineDeployedId' :'',
         'turbineId' :'',
         'siteId' :'',
@@ -25,7 +25,7 @@ var siteApp = new Vue({
         'totalStarts' :'',
         'lastPlannedOutageDate' :'',
         'lastUnplannedOutageDate' :''
-      }]
+      }
   },
   methods: {
     loadTurbine(siteId)
