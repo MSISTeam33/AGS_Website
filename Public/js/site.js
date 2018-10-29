@@ -32,7 +32,7 @@ var siteApp = new Vue({
     {
       var el = event.target;
       var siteId = sid;
-      console.log(el.dataset, siteId);
+      console.log(el, siteId);
       //log
 
       // TODO: Fetch task-specific data
@@ -46,6 +46,7 @@ var siteApp = new Vue({
 
       // get the clicked element
       $(el).toggleClass('row-active');
+      
   		$(el).parent().find('.expandable').toggleClass('row-open');
   		$(el).parent().find('.row-toggle').toggleClass('row-toggle-twist');
     }
