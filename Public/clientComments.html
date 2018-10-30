@@ -40,10 +40,10 @@
                            <div class="col-lg-1 col-md-1">{{cl.gicsSubIndustry}}</div>
                            <div class="col-lg-1 col-md-1">{{cl.headquarters}}</div>
                            <div class="col-lg-1 col-md-1">
-                              <div class="uppercase" @click="gotoSite(c.clientId)"><strong><i class="fa fa-wrench"></i> View Sites</strong></div>
+                              <div class="uppercase" @click="gotoSite(cl.clientId)"><strong><i class="fa fa-wrench"></i> View Sites</strong></div>
                            </div>
                            <div class="col-lg-2 col-md-2">
-                              <div class="uppercase" @click="loadComments($event, c.clientId)" :data-client-id="c.clientId"><strong><i class="fa fa-wrench"></i> View Comments</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div>
+                              <div class="uppercase" @click="loadComments($event, cl.clientId)" :data-client-id="c.clientId"><strong><i class="fa fa-wrench"></i> View Comments</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div>
                            </div>
                         </div>
                         <!-- Client specific Comments -->
