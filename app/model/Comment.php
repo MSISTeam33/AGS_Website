@@ -35,4 +35,19 @@ class Comment
 		}
 		return $arr;
 	}
+
+	public static function fetchSitesByClientId(int $clientId)
+	{
+		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
+		$sql = 'SELECT commentSection FROM comments WHERE clientId=?;';
+		$statement = $db->prepare($sql);
+		$success = $statement->execute([$clientId]);
+		$arr = [];
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$commentItem = new Comment($row);
+			array_push($arr, $commentItem);
+		}
+		return $arr;
+	}
 }
