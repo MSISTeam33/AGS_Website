@@ -19,8 +19,7 @@
             <!-- Table Head -->
             <div class="data-group data-header hidden-sm hidden-xs">
                <div class="row">
-                  <div class="col-lg-1 col-md-1"><strong class="uppercase">Site ID</strong></div>
-                  <div class="col-lg-1 col-md-1"><strong class="uppercase">Site Name</strong></div>
+                  <div class="col-lg-2 col-md-2"><strong class="uppercase">Site Name</strong></div>
                   <div class="col-lg-3 col-md-3"><strong class="uppercase">Site Description</strong></div>
                   <div class="col-lg-1 col-md-1"><strong class="uppercase">Primary Contact</strong></div>
                   <div class="col-lg-1 col-md-1"><strong class="uppercase">Capacity</strong></div>
@@ -36,8 +35,8 @@
                   <div class="data-group" v-for="t in turbineList">
                      <div class="row">
                         <div class="data-expands">
-                           <div class="col-lg-1 col-md-1" id="siteId">{{s.siteId}}</div>
-                           <div class="col-lg-1 col-md-1"><span class="title">{{s.siteName}}</span></div>
+                           <!-- <div class="col-lg-1 col-md-1" id="siteId">{{s.siteId}}</div> -->
+                           <div class="col-lg-2 col-md-2"><span class="title">{{s.siteName}}</span></div>
                            <div class="col-lg-3 col-md-3">{{s.siteDescription}}</div>
                            <div class="col-lg-1 col-md-1">{{s.primaryContact}}</div>
                            <div class="col-lg-1 col-md-1">{{s.capacity}}</div>
