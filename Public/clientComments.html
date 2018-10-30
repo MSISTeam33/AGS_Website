@@ -29,7 +29,7 @@
             <!-- Table Head -->
             <!-- Table Body -->
             <div id="clientPage">
-               <div id="siteTableBody" v-for="cl in clientList">
+               <div id="clientTableBody" v-for="cl in clientList">
                   <!-- Table Row -->
                   <div class="data-group">
                      <div class="row">
@@ -43,7 +43,7 @@
                               <div class="uppercase" @click="gotoSite(cl.clientId)"><strong><i class="fa fa-wrench"></i> View Sites</strong></div>
                            </div>
                            <div class="col-lg-2 col-md-2">
-                              <div class="uppercase" @click="loadComments($event, cl.clientId)" :data-client-id="c.clientId"><strong><i class="fa fa-wrench"></i> View Comments</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div>
+                              <div class="uppercase" @click="loadComments($event, cl.clientId)" :data-client-id="cl.clientId"><strong><i class="fa fa-wrench"></i> View Comments</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div>
                            </div>
                         </div>
                         <!-- Client specific Comments -->
