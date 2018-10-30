@@ -36,7 +36,7 @@ class Comment
 		return $arr;
 	}
 
-	public static function fetchSitesByClientId(int $clientId)
+	public static function fetchCommentsByClientId(int $clientId)
 	{
 		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
 		$sql = 'SELECT commentSection FROM comments WHERE clientId=?;';

@@ -35,15 +35,15 @@
                      <div class="row">
                         <div class="data-expands">
                            <div class="col-lg-2 col-md-2"><span class="title">{{cl.clientName}}</span></div>
-                           <div class="col-lg-3 col-md-3">{{cl.siteDescription}}</div>
+                           <div class="col-lg-3 col-md-3">{{cl.clientDescription}}</div>
                            <div class="col-lg-1 col-md-1">{{cl.gicsSector}}</div>
                            <div class="col-lg-1 col-md-1">{{cl.gicsSubIndustry}}</div>
                            <div class="col-lg-1 col-md-1">{{cl.headquarters}}</div>
-                           <div class="col-lg-1 col-md-1">
+                           <div class="col-lg-2 col-md-2">
                               <div class="uppercase" @click="gotoSite(cl.clientId)"><strong><i class="fa fa-wrench"></i> View Sites</strong></div>
                            </div>
                            <div class="col-lg-2 col-md-2">
-                              <div class="uppercase" @click="loadComments($event, cl.clientId)" :data-client-id="cl.clientId"><strong><i class="fa fa-wrench"></i> View Comments</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div>
+                              <div class="uppercase" @click="fetchCommentsByClientId($event, cl.clientId)" :data-client-id="cl.clientId"><strong><i class="fa fa-wrench"></i> View Comments</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div>
                            </div>
                         </div>
                         <!-- Client specific Comments -->
