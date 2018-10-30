@@ -42,7 +42,6 @@ var sensorApp = new Vue({
    // TODO: Fetch turbine-specific sensors
    fetch('api/sensorInfo.php?turbineDeployedId='+turbineDeployedId)
    .then( response => response.json() )
-   .then(console.log(response))
    .then( json => {sensorApp.sensorList = json} )
    .catch( err => {
      console.error('SENSOR FETCH ERROR:');
