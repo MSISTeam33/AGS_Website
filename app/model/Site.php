@@ -5,7 +5,8 @@ class Site
   public $clientId;
   public $siteName;
   public $siteDescription;
-  public $capacity;
+	public $primaryContact;
+	public $capacity;
   public $commericialDate;
   public $addrLine1;
   public $addrLine2;
