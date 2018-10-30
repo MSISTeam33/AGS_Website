@@ -39,7 +39,7 @@ class Comment
 	public static function fetchCommentsByClientId(int $clientId)
 	{
 		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
-		$sql = 'SELECT commentSection FROM comments WHERE clientId=?;';
+		$sql = 'SELECT * FROM comments WHERE clientId=?;';
 		$statement = $db->prepare($sql);
 		$success = $statement->execute([$clientId]);
 		$arr = [];
