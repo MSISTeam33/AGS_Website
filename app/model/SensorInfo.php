@@ -22,7 +22,7 @@ class SensorInfo
     $this->sensorName = $row['sensorName'];
     $this->sensorDescription = $row['sensorDescription'];
     $this->manufacturer = $row['manufacturer'];
-    $this->sensorNametotalLifeExpentancyHours = $row['totalLifeExpentancyHours'];
+    $this->totalLifeExpentancyHours = $row['totalLifeExpentancyHours'];
   }
 
   public static function fetchSensorsByTurbineId(int $turbineDeployedId) {
