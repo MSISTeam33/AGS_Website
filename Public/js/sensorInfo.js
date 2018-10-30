@@ -36,7 +36,7 @@ var sensorApp = new Vue({
   created () {
     // Do data fetch
    const url = new URL(window.location.href);
-   const clientId = url.searchParams.get('turbineDeployedId');
+   const turbineDeployedId = url.searchParams.get('turbineDeployedId');
    console.log('turbineDeployedId: '+ turbineDeployedId);
 
    // TODO: Fetch turbine-specific sensors
