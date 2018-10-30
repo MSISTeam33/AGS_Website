@@ -25,7 +25,7 @@ class SensorInfo
     $this->sensorNametotalLifeExpentancyHours = $row['totalLifeExpentancyHours'];
   }
 
-  public static function fetchSensorsByTurbineId() {
+  public static function fetchSensorsByTurbineId(int $turbineDeployedId) {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'SELECT * FROM sensorInfo where turbineDeployedId=?';
     $statement = $db->prepare($sql);
