@@ -21,7 +21,7 @@
                <div class="row">
                   <div class="col-lg-2 col-md-2"><strong class="uppercase">Sensor</strong></div>
                   <div class="col-lg-3 col-md-3"><strong class="uppercase">Deployed Date</strong></div>
-                  <div class="col-lg-1 col-md-1"><strong class="uppercase">Sensor Name (Type)</strong></div>
+                  <div class="col-lg-3 col-md-3"><strong class="uppercase">Sensor Name (Type)</strong></div>
                </div>
             </div>
             <!-- Table Head -->
@@ -34,7 +34,8 @@
                         <div class="data-expands">
                            <div class="col-lg-2 col-md-2"><span class="title">{{s.serialNumber}}</span></div>
                            <div class="col-lg-3 col-md-3">{{s.deployedDate}}</div>
-                           <div class="col-lg-1 col-md-1">{{s.sensorName}}</div>
+                           <div class="col-lg-3 col-md-3">{{s.sensorName}}</div>
+                           <div class="col-lg-2 col-md-2">                    </div>
                            <div class="col-lg-2 col-md-2">
                               <div class="uppercase" @click="expandRow($event)"><strong><i class="fa fa-wrench"></i> View Details</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div>
                            </div>
