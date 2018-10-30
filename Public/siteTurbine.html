@@ -42,8 +42,8 @@
                            <div class="col-lg-1 col-md-1">{{s.capacity}}</div>
                            <div class="col-lg-1 col-md-1">{{s.commercialDate}}</div>
                            <div class="col-lg-2 col-md-2">{{s.addrLine1}} , {{s.addrCity}} , {{s.addrState}} , {{s.addrZip}} , {{s.addrCountry}}</div>
-                           <div class="col-lg-1 col-md-1">
-                              <div class="uppercase"><strong><i class="fa fa-wrench"></i> View Turbines</strong><span class="row-toggle" @click="loadTurbine($event, s.siteId)" :data-site-id="s.siteId"><span class="horizontal"></span><span class="vertical"></span></span></div>
+                           <div class="col-lg-2 col-md-2">
+                              <div class="uppercase" @click="loadTurbine($event, s.siteId)" :data-site-id="s.siteId"><strong><i class="fa fa-wrench"></i> View Turbines</strong><span class="row-toggle"><span class="horizontal"></span><span class="vertical"></span></span></div>
                            </div>
                         </div>
                         <!-- Site specific Turbine Info -->
