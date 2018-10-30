@@ -34,8 +34,6 @@ var sensorApp = new Vue({
   }, //end of methods
 
   created () {
-    //works with HTML page to get data from API
-    this.fetchSensorInfo();
     // Do data fetch
    const url = new URL(window.location.href);
    const clientId = url.searchParams.get('turbineDeployedId');
