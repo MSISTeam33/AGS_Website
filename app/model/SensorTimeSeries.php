@@ -26,7 +26,7 @@ class SensorTimeSeries
     $this->starts = $row['starts'];
 	}
 
-	public static function fetchSitesBySensorDeployedId(int $sensorDeployedId)
+	public static function fetchKPIBySensorDeployedId(int $sensorDeployedId)
 	{
 		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
 		$sql = 'SELECT * FROM sensorTimeSeries WHERE sensorDeployedId=?;';
