@@ -51,7 +51,7 @@ var siteApp = new Vue({
   		$(el).parents('.row').find('.row-toggle').toggleClass('row-toggle-twist');
     }, //end of load turbine
 
-    gotoSite(tid) {
+    gotoSensors(tid) {
       window.location = 'turbineSensors.html?turbineDeployedId=' + tid;
     }, //end of go to Site
   }, //end of methods
