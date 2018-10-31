@@ -2,8 +2,8 @@
 
 require '../../app/common.php';
 
-$turbineDeployedId = intval($_GET['sensorDeployedId'] ?? 0);
-if ($turbineDeployedId < 1) {
+$sensorDeployedId = intval($_GET['sensorDeployedId'] ?? 0);
+if ($sensorDeployedId < 1) {
   throw new Exception('Invalid $sensorDeployedId');
 }
   //gets data that is fetched by the Site Model from the SQL database
