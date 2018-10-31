@@ -35,7 +35,7 @@ class SensorTimeSeries
 		$arr = [];
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 		{
-			$sensorDataItem = new Site($row);
+			$sensorDataItem = new sensorTimeSeries($row);
 			array_push($arr, $sensorDataItem);
 		}
 		return $arr;
