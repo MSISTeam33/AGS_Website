@@ -1,7 +1,7 @@
 var kpiAvailabilityApp = new Vue({
       el: '#kpiAvailability',
       data: {
-        sensorTimeSeries: [],
+
       },
 
       methods: {
@@ -22,7 +22,7 @@ var kpiAvailabilityApp = new Vue({
         formatData() {
           this.sensorTimeSeries.forEach(
             (entry, index, arr) => {
-              entry.dateCollected = Date.parse(entry.dataCollectedDate);
+              entry.dataCollectedDate = Date.parse(entry.dataCollectedDate);
               entry.availability = Number(entry.availability);
             }
           )
@@ -37,7 +37,7 @@ var kpiAvailabilityApp = new Vue({
                 if (!(i.sensorDeployedId in series)) {
                   series[i.sensorDeployedId] = { name: i.sensorSerialNumber + '('+i.sensorName+')', data:[]};
                 }
-              series[i.sensorDeployedId].data.push([i.dateCollected, i.availability]);
+              series[i.sensorDeployedId].data.push([i.dataCollectedDate, i.availability]);
           });
 
 
