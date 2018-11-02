@@ -7,7 +7,7 @@ require '../../app/common.php';
     throw new Exception('Invalid Client ID');
   }
   //gets data that is fetched by the Site Model from the SQL database
-  $siteArr=Site::fetchSitesByClientId($clientId);
+  $siteArr=SiteTurbine::fetchSiteTurbineByClientId($clientId);
   //convert to json and print
   $json = json_encode($siteArr, JSON_PRETTY_PRINT);
   header('Content-type: application/json');

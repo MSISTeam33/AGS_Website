@@ -48,7 +48,6 @@ var clientApp = new Vue({
 
       // get the clicked element
       $(el).toggleClass('row-active');
-
   		$(el).parents('.row').find('.expandable').toggleClass('row-open');
   		$(el).parents('.row').find('.row-toggle').toggleClass('row-toggle-twist');
     } //end of load comments

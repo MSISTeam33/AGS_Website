@@ -66,6 +66,14 @@
                     <p>{{com.commentSection}}</p>
                   </div>
                 </div>
+                <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
+                  <p>Enter Comment:  <input id="commentSection" type="textbox" v-model="commentList.commentSection"></p>
+                </div>
+                <form @submit.prevent="insertNewComment" id="newCommentForm">
+                    
+
+                <button id="newCommentButton">Submit</button>
+              </form>
               </div>
               <!-- Client specific Comments -->
             </div>

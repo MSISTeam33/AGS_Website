@@ -1,5 +1,5 @@
 <?php
-class Site
+class SiteTurbine
 {
 	public $siteId;
   public $clientId;
@@ -14,6 +14,15 @@ class Site
   public $addrState;
   public $addrZip;
   public $addrCountry;
+	public $turbineDeployedId;
+  public $turbineId;
+  public $siteId;
+  public $serialNumber;
+  public $deployedDate;
+  public $totalFiredHours;
+  public $totalStarts;
+  public $lastPlannedOutageDate;
+  public $lastUnplannedOutageDate;
 
 	public function __construct($row)
 	{
@@ -29,18 +38,27 @@ class Site
     $this->addrState = $row['addrState'];
     $this->addrZip = $row['addrZip'];
     $this->addrCountry = $row['addrCountry'];
+		$this->turbineDeployedId = isset($row['turbineDeployedId']) ? intval($row['turbineDeployedId']) : null;
+    $this->turbineId = $row['turbineId'];
+    $this->siteId = $row['siteId'];
+    $this->serialNumber = $row['serialNumber'];
+    $this->deployedDate = $row['deployedDate'];
+    $this->totalFiredHours = $row['totalFiredHours'];
+    $this->totalStarts = $row['totalStarts'];
+    $this->lastPlannedOutageDate = $row['lastPlannedOutageDate'];
+    $this->lastUnplannedOutageDate = $row['lastUnplannedOutageDate'];
 	}
 
-	public static function fetchSitesByClientId(int $clientId)
+	public static function fetchSiteTurbineByClientId(int $clientId)
 	{
 		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
-		$sql = 'SELECT * FROM site WHERE clientId=?;';
+		$sql = 'SELECT * FROM siteTurbine WHERE clientId=?;';
 		$statement = $db->prepare($sql);
 		$success = $statement->execute([$clientId]);
 		$arr = [];
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 		{
-			$siteItem = new Site($row);
+			$siteItem = new SiteTurbine($row);
 			array_push($arr, $siteItem);
 		}
 		return $arr;

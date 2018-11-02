@@ -1,7 +1,7 @@
 var siteApp = new Vue({
   el: '#sitePage',
   data: {
-      siteList: [{
+      siteTurbineList: [{
         'siteId' : '',
         'clientId' : '',
         'siteName' : '',
@@ -13,9 +13,7 @@ var siteApp = new Vue({
         'addrCity':'',
         'addrState':'',
         'addrZip':'',
-        'addrCountry':''
-      }],
-      turbineList: [{
+        'addrCountry':'',
         'turbineDeployedId' :'',
         'turbineId' :'',
         'siteId' :'',
@@ -28,21 +26,21 @@ var siteApp = new Vue({
       }]
   },
   methods: {
-    loadTurbine(event, sid) //siteId)
+    loadTurbine(event /*,sid*/)
     {
       var el = event.currentTarget;
-      var siteId = sid;
-      console.log(el, siteId);
-      //log
-
-      // TODO: Fetch task-specific data
-      fetch('api/turbineInfo.php?siteId='+siteId)
-      .then( response => response.json() )
-      .then( json => {siteApp.turbineList = json} )
-      .catch( err => {
-        console.error('TURBINE FETCH ERROR:');
-        console.error(err);
-      })
+      // var siteId = sid;
+      // console.log(el, siteId);
+      // //log
+      //
+      // // TODO: Fetch task-specific data
+      // fetch('api/turbineInfo.php?siteId='+siteId)
+      // .then( response => response.json() )
+      // .then( json => {siteApp.siteTurbineList = json} )
+      // .catch( err => {
+      //   console.error('TURBINE FETCH ERROR:');
+      //   console.error(err);
+      // })
 
       // get the clicked element
       $(el).toggleClass('row-active');
@@ -63,9 +61,9 @@ var siteApp = new Vue({
    console.log('Client: '+ clientId);
 
    // TODO: Fetch client-specific site
-   fetch('api/site.php?clientId='+clientId)
+   fetch('api/siteTurbine.php?clientId='+clientId)
    .then( response => response.json() )
-   .then( json => {siteApp.siteList = json} )
+   .then( json => {siteApp.siteTurbineList = json} )
    .catch( err => {
      console.error('SITE FETCH ERROR:');
      console.error(err);
