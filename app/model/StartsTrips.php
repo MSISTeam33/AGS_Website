@@ -11,7 +11,7 @@ class StartsTrips
     $this->$startsPercentage = $row['$startsPercentage'];
   }
 
-  public static function fetchStartsTripsBySensorDeployedId() {
+  public static function fetchStartsTripsBySensorDeployedId(int $sensorDeployedId) {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     $sql = 'SELECT * FROM startsTrips where sensorDeployedId=?;';
     $statement = $db->prepare($sql);
