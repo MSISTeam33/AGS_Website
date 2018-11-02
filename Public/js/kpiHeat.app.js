@@ -23,7 +23,7 @@ var kpiHeatApp = new Vue({
       this.sensorTimeSeries.forEach(
         (entry, index, arr) => {
           entry.heatRate = Number(entry.heatRate);
-          entry.dataCollectedDate = Number(entry.dataCollectedDate);
+          entry.dataCollectedDate = Date.parse(entry.dataCollectedDate);
         }
       )
     },
@@ -90,7 +90,6 @@ var kpiHeatApp = new Vue({
     const url = new URL(window.location.href);
     const sensorDeployedId = url.searchParams.get('sensorDeployedId');
     this.sensorDeployedId = sensorDeployedId;
-
     this.fetchSensorTimeSeries(sensorDeployedId);
   }
 })
