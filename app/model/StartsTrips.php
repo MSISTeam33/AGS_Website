@@ -8,7 +8,7 @@ class StartsTrips
   public function __construct($row) {
     $this->sensorDeployedId = isset($row['sensorDeployedId']) ? intval($row['sensorDeployedId']) : null;
     $this->tripsPercentage = $row['tripsPercentage'];
-    $this->$startsPercentage = $row['$startsPercentage'];
+    $this->startsPercentage = $row['startsPercentage'];
   }
 
   public static function fetchStartsTripsBySensorDeployedId(int $sensorDeployedId) {
