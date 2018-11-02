@@ -53,7 +53,7 @@ var clientApp = new Vue({
   		$(el).parents('.row').find('.row-toggle').toggleClass('row-toggle-twist');
     }, //end of load comments
 
-    insertNewComment(cliId) {
+    insertNewComment(event, cliId) {
         const com = (document.getElementById('commentSection').value);
         console.log(com);
         console.log(cliId);
@@ -79,7 +79,7 @@ var clientApp = new Vue({
                 console.error('COMMENT POST ERROR:');
                 console.error(err);
             })
-        //this.fetchCommentsByClientId(event, cliId);
+        this.fetchCommentsByClientId(event, cliId);
         this.getEmptyForm();
     }, //end of insert new comment
 
