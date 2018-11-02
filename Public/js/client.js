@@ -31,7 +31,7 @@ var clientApp = new Vue({
       window.location = 'siteTurbine.html?clientId=' + cid;
     }, //end of go to Site
 
-    fetchCommentsByClientId(cl_id)
+    fetchCommentsByClientId(event,cl_id)
     {
       var el = event.currentTarget;
       var clientId = cl_id;
@@ -53,7 +53,7 @@ var clientApp = new Vue({
   		$(el).parents('.row').find('.row-toggle').toggleClass('row-toggle-twist');
     }, //end of load comments
 
-    insertNewComment(event, cliId) {
+    insertNewComment(cliId) {
         const com = (document.getElementById('commentSection').value);
         console.log(com);
         console.log(cliId);
