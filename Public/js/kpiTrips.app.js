@@ -10,7 +10,7 @@ var kpiTripsApp = new Vue({
         .then(response => response.json())
         .then(json => {
           kpiTripsApp.kpiList = json;
-          kpiTripsApp.buildStartsChart();
+          kpiTripsApp.buildTripsChart();
         })
         .catch(err => {
           console.log('Error getting data Gauge');
