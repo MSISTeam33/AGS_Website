@@ -31,7 +31,7 @@ var clientApp = new Vue({
       window.location = 'siteTurbine.html?clientId=' + cid;
     }, //end of go to Site
 
-    fetchCommentsByClientId(event,cl_id)
+    fetchCommentsByClientId(event, cl_id)
     {
       var el = event.currentTarget;
       var clientId = cl_id;
@@ -51,41 +51,7 @@ var clientApp = new Vue({
 
   		$(el).parents('.row').find('.expandable').toggleClass('row-open');
   		$(el).parents('.row').find('.row-toggle').toggleClass('row-toggle-twist');
-    }, //end of load comments
-
-    insertNewComment(cliId) {
-        const com = (document.getElementById('commentSection').value);
-        console.log(com);
-        console.log(cliId);
-        // POST to remote server
-        fetch('api/comment.php?clientId='+cliId, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8"
-                },
-                body: JSON.stringify({
-                    'commentSection': com,
-                    'clientId': cliId
-                })
-            })
-            .then(response => response.json())
-            .then(json => {
-                console.log(json)
-            }) //working till here
-            .then(json => {
-                clientApp.commentList = json
-            })
-            .catch(err => {
-                console.error('COMMENT POST ERROR:');
-                console.error(err);
-            })
-        //this.fetchCommentsByClientId(event, cliId);
-        this.getEmptyForm();
-    }, //end of insert new comment
-
-    getEmptyForm() {
-        document.getElementById('commentSection').value = '';
-    }, //end of get empty form
+    } //end of load comments
   }, //end of methods
 
   created () {
