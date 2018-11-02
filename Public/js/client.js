@@ -55,7 +55,6 @@ var clientApp = new Vue({
 
     insertNewComment(cliId) {
         const com = (document.getElementById('commentSection').value);
-        //const cliId = (document.getElementById('clientId').value);
         console.log(com);
         console.log(cliId);
         // POST to remote server
