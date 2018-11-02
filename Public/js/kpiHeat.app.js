@@ -78,7 +78,7 @@ var kpiHeatApp = new Vue({
             type: 'area',
             name: 'Heat Rate/Time',
             data: kpiHeatApp.sensorTimeSeries.map( entry=>
-              [entry.dateCollected, entry.heatRate]
+              [entry.dataCollectedDate, entry.heatRate]
             )
         }]
     });
