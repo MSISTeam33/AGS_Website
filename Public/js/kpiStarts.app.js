@@ -1,15 +1,15 @@
 var kpiStartsApp = new Vue({
   el: '#kpiStarts',
   data: {
-    kpiViewTS: [],
+    kpiList: [],
   },
 
   methods: {
-    fetchkpiViewTS(sensorDeployedId) {
-      fetch('/api/kpiViewTS.php?sensorDeployedId=' + sensorDeployedId)
+    fetchStartsTripsBySensorDeployedId(sensorDeployedId) {
+      fetch('/api/startsTrips.php?sensorDeployedId=' + sensorDeployedId)
         .then(response => response.json())
         .then(json => {
-          kpiStartsApp.kpiViewTS = json;
+          kpiStartsApp.kpiList = json;
           kpiStartsApp.buildStartsChart();
         })
         .catch(err => {
@@ -106,7 +106,7 @@ var kpiStartsApp = new Vue({
 
           series: [{
               name: 'Start Rate %',
-              data: [Number(kpiStartsApp.kpiViewTS[0].startsPercentage)],
+              data: [Number(kpiStartsApp.kpiList[0].startsPercentage)],
               tooltip: {
                   valueSuffix: '%'
               }
@@ -122,7 +122,7 @@ var kpiStartsApp = new Vue({
     const url = new URL(window.location.href);
     const sensorDeployedId = url.searchParams.get('sensorDeployedId');
     this.sensorDeployedId = sensorDeployedId;
-    this.fetchkpiViewTS(sensorDeployedId);
+    this.fetchStartsTripsBySensorDeployedId(sensorDeployedId);
 
   }
   })
