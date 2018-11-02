@@ -5,8 +5,8 @@ var kpiAvailabilityApp = new Vue({
       },
 
       methods: {
-        fetchSensorTimeSeries(turbineDeployedId) {
-          fetch('/api/sensorTimeSeries.php?turbineDeployedId=' + turbineDeployedId)
+        fetchKPIBySensorDeployedId(sensorDeployedId) {
+          fetch('/api/sensorTimeSeries.php?sensorDeployedId=' + sensorDeployedId)
             .then(response => response.json())
             .then(json => {
               kpiAvailabilityApp.sensorTimeSeries = json;
@@ -67,11 +67,11 @@ var kpiAvailabilityApp = new Vue({
             created() {
 
               const url = new URL(window.location.href);
-              const turbineDeployedId = url.searchParams.get('turbineDeployedId');
+              const sensorDeployedId = url.searchParams.get('sensorDeployedId');
               //  console.log('Turbine: ' + turbineDeployedId);
-              this.turbineDeployedId = turbineDeployedId;
+              this.sensorDeployedId = sensorDeployedId;
 
-              this.fetchSensorTimeSeries(turbineDeployedId);
+              this.fetchKPIBySensorDeployedId(sensorDeployedId);
 
 
 
