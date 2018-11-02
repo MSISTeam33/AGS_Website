@@ -29,19 +29,6 @@ var kpiAvailabilityApp = new Vue({
         },
 
         buildAvailabilityChart() {
-
-          var series = {};
-
-          series.forEach( function(i) {
-
-                if (!(i.sensorDeployedId in series)) {
-                  series[i.sensorDeployedId] = { name: i.sensorSerialNumber + '('+i.sensorName+')', data:[]};
-                }
-              series[i.sensorDeployedId].data.push([i.dataCollectedDate, i.availability]);
-          });
-
-
-
                 Highcharts.chart('availabilityChart', {
                   xAxis: {
                     enabled: true,
@@ -59,7 +46,13 @@ var kpiAvailabilityApp = new Vue({
                   title: {
                     text: 'Scatter Plot of Availability'
                   },
-                  series: Object.values(series)
+
+                  series: [{
+                    type: 'area',
+                    name: 'Availability',
+                    // Data needs [ [date, num], [date2, num2 ], ... ]
+                    data: this.sensorTimeSeries.map( item => [item.dataCollectedDate, item.availability] )
+                  }]
                 });
               },
             },
