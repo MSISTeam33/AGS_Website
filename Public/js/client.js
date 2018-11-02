@@ -74,13 +74,13 @@ var clientApp = new Vue({
                 console.log(json)
             }) //working till here
             .then(json => {
-                commentApp.commentList = json
+                clientApp.commentList = json
             })
             .catch(err => {
                 console.error('COMMENT POST ERROR:');
                 console.error(err);
             })
-        this.fetchComments();
+        //this.fetchCommentsByClientId(event, cliId);
         this.getEmptyForm();
     }, //end of insert new comment
 
