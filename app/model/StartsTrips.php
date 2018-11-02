@@ -13,7 +13,7 @@ class StartsTrips
 
   public static function fetchStartsTripsBySensorDeployedId() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'SELECT * FROM StartsTrips where sensorDeployedId=?;';
+    $sql = 'SELECT * FROM startsTrips where sensorDeployedId=?;';
     $statement = $db->prepare($sql);
     $success = $statement->execute([$sensorDeployedId]);
     $arr = [];
