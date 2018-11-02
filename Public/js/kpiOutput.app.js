@@ -9,9 +9,9 @@ var kpiOutputApp = new Vue({
       fetch('/api/sensorTimeSeries.php?sensorDeployedId=' + sensorDeployedId)
         .then(response => response.json())
         .then(json => {
-          kpiAvailabilityApp.sensorTimeSeries = json;
-          kpiAvailabilityApp.formatData();
-          kpiAvailabilityApp.buildOutputChart();
+          kpiOutputApp.sensorTimeSeries = json;
+          kpiOutputApp.formatData();
+          kpiOutputApp.buildOutputChart();
         })
         .catch(err => {
           console.log('Error getting data');
