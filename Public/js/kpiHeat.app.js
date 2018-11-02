@@ -41,15 +41,12 @@ var kpiHeatApp = new Vue({
           enabled: true,
           title: {
             enabled: true,
-            text: 'Heat Rate'
-          },
-          startOnTick: true,
-          endOnTick: true,
-          showLastLabel: true
+            text: 'Date'
+          }
         },
         yAxis: {
           title: {
-            text: 'Date'
+            text: 'Heat Rate'
           }
         },
         legend: {
@@ -83,7 +80,7 @@ var kpiHeatApp = new Vue({
         },
         series: [{
           type: 'area',
-          data: kpiHeatApp.sensorTimeSeries.map(entry => [entry.heatRate, entry.dataCollectedDate])
+          data: kpiHeatApp.sensorTimeSeries.map(entry => [entry.dataCollectedDate,entry.heatRate])
 
         }]
       })
