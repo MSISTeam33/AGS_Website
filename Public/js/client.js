@@ -86,7 +86,7 @@ var clientApp = new Vue({
             })
         //this.fetchComments();
         this.getEmptyForm();
-        window.refresh();
+        location.reload();
     } //end of insert new comment
   }, //end of methods
 
