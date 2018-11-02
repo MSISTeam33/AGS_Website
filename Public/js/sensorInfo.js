@@ -19,7 +19,11 @@ var sensorApp = new Vue({
       $(el).toggleClass('row-active');
       $(el).parents('.row').find('.expandable').toggleClass('row-open');
       $(el).parents('.row').find('.row-toggle').toggleClass('row-toggle-twist');
-    } //end of expand row
+    }, //end of expand row
+
+    gotoCharts(sid) {
+      window.location = 'sensorTimeSeries.html?sensorDeployedId=' + sid;
+    } //end of go to Site
   }, //end of methods
 
   created() {
