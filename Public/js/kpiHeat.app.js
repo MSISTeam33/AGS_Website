@@ -23,7 +23,7 @@ var kpiHeatApp = new Vue({
       this.sensorTimeSeries.forEach(
         (entry, index, arr) => {
           entry.heatRate = Number(entry.heatRate);
-          entry.output = Number(entry.output);
+          entry.dataCollectedDate = Number(entry.dataCollectedDate);
         }
       )
     },
@@ -32,8 +32,7 @@ var kpiHeatApp = new Vue({
 
       Highcharts.chart('heatChart', {
         chart: {
-          type: 'scatter',
-          zoomType: 'xy'
+          type: 'area'
         },
         title: {
           text: ''
@@ -50,7 +49,7 @@ var kpiHeatApp = new Vue({
         },
         yAxis: {
           title: {
-            text: 'Output'
+            text: 'Date'
           }
         },
         legend: {
@@ -84,7 +83,7 @@ var kpiHeatApp = new Vue({
         },
         series: [{
           type: 'area',
-          data: kpiHeatApp.sensorTimeSeries.map(entry => [entry.heatRate, entry.output])
+          data: kpiHeatApp.sensorTimeSeries.map(entry => [entry.heatRate, entry.dataCollectedDate])
 
         }]
       })
