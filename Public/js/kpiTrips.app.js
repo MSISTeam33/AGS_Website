@@ -1,16 +1,16 @@
 var kpiTripsApp = new Vue({
   el: '#kpiTrips',
   data: {
-    kpiViewTS: [],
+    kpiList: [],
   },
 
   methods: {
-    fetchkpiViewTS(sensorDeployedId) {
-      fetch('/api/kpiViewTS.php?sensorDeployedId=' + sensorDeployedId)
+    fetchStartsTripsBySensorDeployedId(sensorDeployedId) {
+      fetch('/api/startsTrips.php?sensorDeployedId=' + sensorDeployedId)
         .then(response => response.json())
         .then(json => {
-          kpiTripsApp.kpiViewTS = json;
-          kpiTripsApp.buildTripsChart();
+          kpiTripsApp.kpiList = json;
+          kpiTripsApp.buildStartsChart();
         })
         .catch(err => {
           console.log('Error getting data Gauge');
@@ -18,8 +18,8 @@ var kpiTripsApp = new Vue({
         })
     },
 
-    buildTripsChart() {
-      Highcharts.chart('tripsChart', {
+    buildStartsChart() {
+      Highcharts.chart('startsChart', {
 
           chart: {
               type: 'gauge',
@@ -87,26 +87,26 @@ var kpiTripsApp = new Vue({
                   rotation: 'auto'
               },
               title: {
-                  text: 'Trip Rate Percentage'
+                  text: 'Start Rate Percentage'
               },
               plotBands: [{
                   from: 0,
-                  to: 10,
-                  color: '#55BF3B' // green
+                  to: 75,
+                  color: '#DF5353' // red
               }, {
-                  from: 10,
-                  to: 25,
+                  from: 60,
+                  to: 75,
                   color: '#DDDF0D' // yellow
               }, {
-                  from: 25,
+                  from: 75,
                   to: 100,
-                  color: '#DF5353' // red
+                  color: '#55BF3B' // green
               }]
           },
 
           series: [{
-              name: 'Trip Rate %',
-              data: [Number(kpiTripsApp.kpiViewTS[0].tripsPercentage)],
+              name: 'Start Rate %',
+              data: [Number(kpiTripsApp.kpiList[0].startsPercentage)],
               tooltip: {
                   valueSuffix: '%'
               }
@@ -122,8 +122,7 @@ var kpiTripsApp = new Vue({
     const url = new URL(window.location.href);
     const sensorDeployedId = url.searchParams.get('sensorDeployedId');
     this.sensorDeployedId = sensorDeployedId;
-
-    this.fetchkpiViewTS(sensorDeployedId);
+    this.fetchStartsTripsBySensorDeployedId(sensorDeployedId);
 
   }
-})
+  })
