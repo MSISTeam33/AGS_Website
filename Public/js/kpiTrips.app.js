@@ -106,7 +106,7 @@ var kpiTripsApp = new Vue({
 
           series: [{
               name: 'Trips Rate %',
-              data: [Number(kpiTripsApp.kpiList[1].tripsPercentage)],
+              data: [Number(kpiTripsApp.kpiList[0].tripsPercentage)],
               tooltip: {
                   valueSuffix: '%'
               }
