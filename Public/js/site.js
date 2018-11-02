@@ -16,7 +16,6 @@ var siteApp = new Vue({
         'addrCountry':'',
         'turbineDeployedId' :'',
         'turbineId' :'',
-        'siteId' :'',
         'serialNumber' :'',
         'deployedDate' :'',
         'totalFiredHours' :'',

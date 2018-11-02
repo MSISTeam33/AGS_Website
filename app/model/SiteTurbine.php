@@ -38,9 +38,8 @@ class SiteTurbine
     $this->addrState = $row['addrState'];
     $this->addrZip = $row['addrZip'];
     $this->addrCountry = $row['addrCountry'];
-		$this->turbineDeployedId = isset($row['turbineDeployedId']) ? intval($row['turbineDeployedId']) : null;
+		$this->turbineDeployedId = $row['turbineDeployedId'];
     $this->turbineId = $row['turbineId'];
-    $this->siteId = $row['siteId'];
     $this->serialNumber = $row['serialNumber'];
     $this->deployedDate = $row['deployedDate'];
     $this->totalFiredHours = $row['totalFiredHours'];
