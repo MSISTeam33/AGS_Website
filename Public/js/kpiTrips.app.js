@@ -18,7 +18,7 @@ var kpiTripsApp = new Vue({
         })
     },
 
-    buildStartsChart() {
+    buildTripsChart() {
       Highcharts.chart('tripsChart', {
 
           chart: {
