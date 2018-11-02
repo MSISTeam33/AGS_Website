@@ -4,9 +4,9 @@ require '../../app/common.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   $clientId = intval($_GET['clientId'] ?? 0);
-  if ($clientId < 1) {
-    throw new Exception('Invalid Client ID');
-  }
+  // if ($clientId < 1) {
+  //   throw new Exception('Invalid Client ID');
+  // }
   //fetch all contents of the table "comments" into the "$comments" array
   $commentArr=Comment::fetchCommentsByClientId($clientId); //array
   //convert to json and print
