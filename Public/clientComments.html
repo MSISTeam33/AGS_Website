@@ -67,13 +67,8 @@
                   </div>
                 </div>
                 <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
-                  <p>Enter Comment:  <input id="commentSection" type="textbox" v-model="commentList.commentSection"></p>
+                  <p>Enter Comment:  <input id="commentSection" type="textbox" v-model="commentList.commentSection"></p>  <div class="col-xs-2 text-right" @click="insertNewComment()"><a href="#" class="btn btn-green btn-sm"><i class="fa fa-plus"></i>Add</a></div>
                 </div>
-                <form @submit.prevent="insertNewComment" id="newCommentForm">
-                    
-
-                <button id="newCommentButton">Submit</button>
-              </form>
               </div>
               <!-- Client specific Comments -->
             </div>
