@@ -65,6 +65,17 @@
                   <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-1">
                     <p>{{com.commentSection}}</p>
                   </div>
+                  <div>
+                    <form @submit.prevent="insertNewComment(commentList.clientId)" id="newCommentForm">
+                      <table>
+                        <tr>
+                          <td><label>Enter Comment:</label></td>
+                          <td><input id="commentSection" type="textbox" v-model="commentList.commentSection"></td>
+                        </tr>
+                        </table>
+                      <button id="newCommentButton">Submit</button>
+                    </form>
+                  </div>
                 </div>
               </div>
               <!-- Client specific Comments -->

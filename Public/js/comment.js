@@ -10,7 +10,7 @@ var commentApp = new Vue({
     methods: {
         getEmptyForm() {
             document.getElementById('commentSection').value = '';
-            document.getElementById('clientId').value = '';
+            //document.getElementById('clientId').value = '';
         }, //end of get empty form
 
         fetchComments() {
@@ -25,9 +25,9 @@ var commentApp = new Vue({
                 })
         }, //end of fetch comments
 
-        insertNewComment(e) {
+        insertNewComment(cliId) {
             const com = (document.getElementById('commentSection').value);
-            const cliId = (document.getElementById('clientId').value);
+            //const cliId = (document.getElementById('clientId').value);
             console.log(com);
             console.log(cliId);
             // POST to remote server
