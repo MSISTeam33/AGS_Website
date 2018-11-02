@@ -31,7 +31,7 @@ class SiteTurbine
     $this->siteDescription = $row['siteDescription'];
 		$this->primaryContact=$row['primaryContact'];
     $this->capacity = $row['capacity'];
-    $this->commericialDate = $row['commercialDate'];
+    $this->commercialDate = $row['commercialDate'];
     $this->addrLine1 = $row['addrLine1'];
     $this->addrLine2 = $row['addrLine2'];
     $this->addrCity = $row['addrCity'];
