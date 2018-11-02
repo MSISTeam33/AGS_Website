@@ -19,7 +19,6 @@ var kpiAvailabilityApp = new Vue({
             })
         },
 
-
         formatData() {
           this.sensorTimeSeries.forEach(
             (entry, index, arr) => {
