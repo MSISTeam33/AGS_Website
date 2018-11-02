@@ -79,7 +79,7 @@ var clientApp = new Vue({
                 console.error('COMMENT POST ERROR:');
                 console.error(err);
             })
-        this.fetchCommentsByClientId(event, cliId);
+        //this.fetchCommentsByClientId(event, cliId);
         this.getEmptyForm();
     }, //end of insert new comment
 
