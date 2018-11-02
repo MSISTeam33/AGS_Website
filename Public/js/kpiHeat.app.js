@@ -31,26 +31,21 @@ var kpiHeatApp = new Vue({
     buildHeatChart() {
 
       Highcharts.chart('heatChart', {
-        chart: {
-          type: 'area'
-        },
-        title: {
-          text: ''
-        },
         xAxis: {
-          enabled: true,
-          title: {
-            enabled: true,
-            text: 'Date'
-          }
+            enabled:true,
+            type: 'datetime',
+            title: {
+              text: 'Date'
+            }
         },
         yAxis: {
-          title: {
-            text: 'Heat Rate'
-          }
+            enabled:true,
+            title: {
+              text: 'Heat Rate'
+            }
         },
-        legend: {
-          enabled: false
+        title: {
+            text: 'Heat Rate - Time'
         },
         plotOptions: {
             area: {
@@ -78,12 +73,15 @@ var kpiHeatApp = new Vue({
                 threshold: null
             }
         },
-        series: [{
-          type: 'area',
-          data: kpiHeatApp.sensorTimeSeries.map(entry => [entry.dataCollectedDate,entry.heatRate])
-
+        series: [
+        {
+            type: 'area',
+            name: 'Heat Rate/Time',
+            data: kpiHeatApp.sensorTimeSeries.map( entry=>
+              [entry.dateCollected, entry.heatRate]
+            )
         }]
-      })
+    });
     }
   },
 
