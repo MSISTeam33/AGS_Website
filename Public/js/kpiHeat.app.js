@@ -83,7 +83,7 @@ var kpiHeatApp = new Vue({
             }
         },
         series: [{
-          color: 'rgba(223, 83, 83, .5)',
+          type: 'area',
           data: kpiHeatApp.sensorTimeSeries.map(entry => [entry.heatRate, entry.output])
 
         }]
