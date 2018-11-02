@@ -79,16 +79,9 @@ var kpiCompressorEfficiencyApp = new Vue({
            },
 
            series: [{
-               type: 'line',
-               name: 'Efficiency 1',
-               data: kpiCompressorEfficiencyApp.sensorTimeSeries.filter(item => item.sensorDeployedId == 1).map( entry=>
-                 [entry.dateCollected, entry.compressorEfficiency]
-               )
-           },
-           {
-               type: 'line',
-               name: 'Efficiency 2',
-               data: kpiCompressorEfficiencyApp.sensorTimeSeries.filter(item => item.sensorDeployedId == 2).map( entry=>
+               type: 'area',
+               name: 'Efficiency',
+               data: kpiCompressorEfficiencyApp.sensorTimeSeries.map( entry=>
                  [entry.dateCollected, entry.compressorEfficiency]
                )
            }
