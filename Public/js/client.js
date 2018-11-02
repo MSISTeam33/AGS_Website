@@ -31,7 +31,7 @@ var clientApp = new Vue({
       window.location = 'siteTurbine.html?clientId=' + cid;
     }, //end of go to Site
 
-    fetchCommentsByClientId(event, cl_id)
+    fetchCommentsByClientId(cl_id)
     {
       var el = event.currentTarget;
       var clientId = cl_id;
