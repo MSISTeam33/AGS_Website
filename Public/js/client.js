@@ -17,6 +17,11 @@ var clientApp = new Vue({
   },
   methods: {
     //works with HTML page to get data from API
+    getEmptyForm() {
+        document.getElementById('commentSection').value = '';
+        //document.getElementById('clientId').value = '';
+    }, //end of get empty form
+    
     fetchClients () {
       fetch('api/client.php')
       .then( response => response.json() )
