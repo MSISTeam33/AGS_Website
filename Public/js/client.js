@@ -51,7 +51,42 @@ var clientApp = new Vue({
 
   		$(el).parents('.row').find('.expandable').toggleClass('row-open');
   		$(el).parents('.row').find('.row-toggle').toggleClass('row-toggle-twist');
-    } //end of load comments
+    }, //end of load comments
+
+    insertNewComment(cliId) {
+        const com = (document.getElementById('commentSection').value);
+        //const cliId = (document.getElementById('clientId').value);
+        console.log(com);
+        console.log(cliId);
+        // POST to remote server
+        fetch('api/comment.php', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                body: JSON.stringify({
+                    'commentSection': com,
+                    'clientId': cliId
+                })
+            })
+            .then(response => response.json())
+            .then(json => {
+                console.log(json)
+            }) //working till here
+            .then(json => {
+                commentApp.commentList = json
+            })
+            .catch(err => {
+                console.error('COMMENT POST ERROR:');
+                console.error(err);
+            })
+        this.fetchComments();
+        this.getEmptyForm();
+    }, //end of insert new comment
+
+    getEmptyForm() {
+        document.getElementById('commentSection').value = '';
+    }, //end of get empty form
   }, //end of methods
 
   created () {

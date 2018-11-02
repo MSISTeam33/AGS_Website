@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="js/comment.js"></script>
   <link rel="stylesheet" href="css/siteTurbine.css" />
   <title>Site Information</title>
 </head>
@@ -67,11 +66,11 @@
                     <p>{{com.commentSection}}</p>
                   </div>
                   <div>
-                    <form @submit.prevent="insertNewComment(commentList.clientId)" id="newCommentForm">
+                    <form @submit.prevent="insertNewComment(com.clientId)" id="newCommentForm">
                       <table>
                         <tr>
                           <td><label>Enter Comment:</label></td>
-                          <td><input id="commentSection" type="textbox" v-model="commentList.commentSection"></td>
+                          <td><input id="commentSection" type="textbox" v-model="com.commentSection"></td>
                         </tr>
                         </table>
                       <button id="newCommentButton">Submit</button>
