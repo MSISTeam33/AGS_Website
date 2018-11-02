@@ -29,6 +29,7 @@ class SiteTurbine
     $this->clientId = $row['clientId'];
     $this->siteName = $row['siteName'];
     $this->siteDescription = $row['siteDescription'];
+		$this->primaryContact=$row['primaryContact'];
     $this->capacity = $row['capacity'];
     $this->commericialDate = $row['commercialDate'];
     $this->addrLine1 = $row['addrLine1'];
