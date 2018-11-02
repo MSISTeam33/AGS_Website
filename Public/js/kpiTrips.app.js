@@ -19,7 +19,7 @@ var kpiTripsApp = new Vue({
     },
 
     buildStartsChart() {
-      Highcharts.chart('startsChart', {
+      Highcharts.chart('tripsChart', {
 
           chart: {
               type: 'gauge',
@@ -87,7 +87,7 @@ var kpiTripsApp = new Vue({
                   rotation: 'auto'
               },
               title: {
-                  text: 'Start Rate Percentage'
+                  text: 'Trip Rate Percentage'
               },
               plotBands: [{
                   from: 0,
@@ -105,8 +105,8 @@ var kpiTripsApp = new Vue({
           },
 
           series: [{
-              name: 'Start Rate %',
-              data: [Number(kpiTripsApp.kpiList[0].startsPercentage)],
+              name: 'Trips Rate %',
+              data: [Number(kpiTripsApp.kpiList[1].tripsPercentage)],
               tooltip: {
                   valueSuffix: '%'
               }
