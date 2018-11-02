@@ -16,7 +16,6 @@ class SiteTurbine
   public $addrCountry;
 	public $turbineDeployedId;
   public $turbineId;
-  public $siteId;
   public $serialNumber;
   public $deployedDate;
   public $totalFiredHours;
