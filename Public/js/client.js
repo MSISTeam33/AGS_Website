@@ -58,7 +58,7 @@ var clientApp = new Vue({
         console.log(com);
         console.log(cliId);
         // POST to remote server
-        fetch('api/comment.php', {
+        fetch('api/comment.php?clientId='+cliId, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json; charset=utf-8"
@@ -79,7 +79,7 @@ var clientApp = new Vue({
                 console.error('COMMENT POST ERROR:');
                 console.error(err);
             })
-        this.fetchCommentsByClientId(event, cliId);
+        //this.fetchCommentsByClientId(event, cliId);
         this.getEmptyForm();
     }, //end of insert new comment
 
