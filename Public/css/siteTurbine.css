@@ -11,7 +11,10 @@ body {
   font-size: 12px;
   padding: 0 0 0 0;
 }
-
+header{
+  color:white;
+  font-size:bold;
+}
 /*Reusable parts*/
 .module {
   margin-bottom: 2em;
