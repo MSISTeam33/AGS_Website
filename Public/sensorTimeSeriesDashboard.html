@@ -73,8 +73,7 @@ h4{
 </head>
 
 
-<main>
-  <body>
+<body>
     <header>
       <img src="css/logo.png" alt="AGS logo" style="width:45px;" />
         Alternative Green System
@@ -101,7 +100,7 @@ h4{
       <input type="checkbox" onchange="showAvailability(this.checked)" name="AvailabilityCB" />Availability <br/>
       <input type="checkbox" onchange="showCompressorEfficiency(this.checked)" name="CompressorEfficiencyCB" />CompressorEfficiency <br/>
       <input type="checkbox" onchange="showHeat(this.checked)" name="HeatCB" />Heat <br/>
-      <input type="checkbox" onchange="showHours(this.checked)" name="HoursCB" />Hours <br/>
+      <input type="checkbox" onchange="showHours(this.checked)" name="HoursCB" />Fired Hours <br/>
       <input type="checkbox" onchange="showReliability(this.checked)" name="ReliabilityCB" />Reliability <br/>
       <input type="checkbox" onchange="showTrips(this.checked)" name="TripsCB" />Trips <br/>
       <input type="checkbox" onchange="showStarts(this.checked)" name="StartsCB" />Starts <br/>
@@ -145,12 +144,12 @@ h4{
 
 
             <div id="kpiStarts" style="display:none;">
-              <h4>Starts</h4>
+              <h4>Starts Percentage</h4>
               <div id="startsChart" class="col"></div>
             </div>
 
         <div id="kpiTrips" style="display:none;">
-          <h4>Trips</h4>
+          <h4>Trips Percentage</h4>
           <div id="tripsChart" class="col"></div>
         </div>
       </div>
@@ -158,7 +157,6 @@ h4{
       @Team 33
     </footer>
   </body>
-</main>
 
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
