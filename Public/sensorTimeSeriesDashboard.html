@@ -18,6 +18,48 @@
       else
         $("#kpiOutput").fadeOut();
     }
+    function showAvailability(checked){
+      if(checked==true)
+        $("#kpiAvailability").fadeIn();
+      else
+        $("#kpiAvailability").fadeOut();
+    }
+    function showCompressorEfficiency(checked){
+      if(checked==true)
+        $("#kpiCompressorEfficiency").fadeIn();
+      else
+        $("#kpiCompressorEfficiency").fadeOut();
+    }
+    function showHeat(checked){
+      if(checked==true)
+        $("#kpiHeat").fadeIn();
+      else
+        $("#kpiHeat").fadeOut();
+    }
+    function showHours(checked){
+      if(checked==true)
+        $("#kpiHours").fadeIn();
+      else
+        $("#kpiHours").fadeOut();
+    }
+    function showReliability(checked){
+      if(checked==true)
+        $("#kpiReliability").fadeIn();
+      else
+        $("#kpiReliability").fadeOut();
+    }
+    function showTrips(checked){
+      if(checked==true)
+        $("#kpiTrips").fadeIn();
+      else
+        $("#kpiTrips").fadeOut();
+    }
+    function showStarts(checked){
+      if(checked==true)
+        $("#kpiStarts").fadeIn();
+      else
+        $("#kpiStarts").fadeOut();
+    }
   </script>
   <link rel="stylesheet" href="css/siteTurbine.css" />
   <title>dashboard</title>
@@ -53,10 +95,16 @@ h4{
     </div> <br/>
     <!-- Back Button to go to Clients -->
 
-    <div>
-      <h3>Select KPI data you want to view:</h3>
+    <div style="color:white;">
+      <h3>Select KPIs you want to view:</h3>
       <input type="checkbox" onchange="showOutput(this.checked)" name="OutputCB" />Output <br/>
-      <input type="checkbox" onchange="showAvailability(this.checked)" name="AvailabilityCB" />Output <br/>
+      <input type="checkbox" onchange="showAvailability(this.checked)" name="AvailabilityCB" />Availability <br/>
+      <input type="checkbox" onchange="showCompressorEfficiency(this.checked)" name="CompressorEfficiencyCB" />CompressorEfficiency <br/>
+      <input type="checkbox" onchange="showHeat(this.checked)" name="HeatCB" />Heat <br/>
+      <input type="checkbox" onchange="showHours(this.checked)" name="HoursCB" />Hours <br/>
+      <input type="checkbox" onchange="showReliability(this.checked)" name="ReliabilityCB" />Reliability <br/>
+      <input type="checkbox" onchange="showTrips(this.checked)" name="TripsCB" />Trips <br/>
+      <input type="checkbox" onchange="showStarts(this.checked)" name="StartsCB" />Starts <br/>
     </div>
     <div>
     <div id="kpiOutput" style="display:none;">
@@ -65,55 +113,47 @@ h4{
       </div>
     </div>
 
-    <div id="kpiAvailability">
+    <div id="kpiAvailability" style="display:none;">
       <h4>Availability</h4>
       <div id="availabilityChart" class="col">
       </div>
     </div>
 
-    <div id="kpiCompressorEfficiency">
+    <div id="kpiCompressorEfficiency" style="display:none;">
       <h4>Compressor Efficiency</h4>
       <div id="compressorEfficiencyChart" class="col">
       </div>
     </div>
 
-    <div id="kpiHeat">
+    <div id="kpiHeat" style="display:none;">
       <h4>Heat Rate</h4>
       <div id="heatChart" class="col">
       </div>
     </div>
 
-    <div id="kpiHours">
+    <div id="kpiHours" style="display:none;">
       <h4>Fired Hours</h4>
       <div id="hoursChart" class="col">
       </div>
     </div>
 
-    <div id="kpiReliability">
+    <div id="kpiReliability" style="display:none;">
       <h4>Reliability</h4>
       <div id="reliabilityChart" class="col">
       </div>
     </div>
 
-    <div class="row place">
-      <section class="col place">
-        <div class="row">
-          <div class="col placeholder">
-            <div id="kpiStarts">
+
+            <div id="kpiStarts" style="display:none;">
               <h4>Starts</h4>
               <div id="startsChart" class="col"></div>
             </div>
-          </div>
-        </div>
-      </section>
-      <div class="col placeholder">
-        <div id="kpiTrips">
+
+        <div id="kpiTrips" style="display:none;">
           <h4>Trips</h4>
           <div id="tripsChart" class="col"></div>
         </div>
       </div>
-    </div>
-    </div>
     <footer>
       @Team 33
     </footer>
