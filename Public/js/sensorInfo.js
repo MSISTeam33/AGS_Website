@@ -22,7 +22,7 @@ var sensorApp = new Vue({
     }, //end of expand row
 
     gotoCharts(sid) {
-      window.location = 'sensorTimeSeries.html?sensorDeployedId=' + sid;
+      window.location = 'sensorTimeSeriesDashboard.html?sensorDeployedId=' + sid;
     } //end of go to Site
   }, //end of methods
 
