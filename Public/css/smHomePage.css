@@ -62,7 +62,7 @@ body {
   position: relative;
   height: 50px;
   width: 85%;
-  margin: 40px auto 0 auto;
+  margin: 4px auto 0 auto;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 .wrapper .app .info .info-bottom .left {
