@@ -13,7 +13,11 @@ body {
 }
 header{
   color:white;
-  font-size:bold;
+  font-weight:bold;
+}
+footer{
+  color:white;
+  font-weight:bold;
 }
 /*Reusable parts*/
 .module {
