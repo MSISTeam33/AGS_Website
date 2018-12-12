@@ -34,7 +34,7 @@ var generatorListApp = new Vue({
     // Do data fetch
    const url = new URL(window.location.href);
    // TODO: Fetch client-specific site
-   fetch('api/generatorList.php')
+   fetch('/api/generatorList.php')
    .then( response => response.json() )
    .then( json => {generatorListApp.generatorList = json} )
    .catch( err => {
