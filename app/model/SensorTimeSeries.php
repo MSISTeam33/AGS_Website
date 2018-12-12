@@ -14,7 +14,7 @@ class SensorTimeSeries
 
 	public function __construct($row)
 	{
-		$this->sensorDeployedId = isset($row['sensorDeployedId']) ? intval($row['sensorDeployedId']) : null;
+		$this->sensorDeployedId = isset($row['sensorDeployedId']) ? $row['sensorDeployedId'] : null;
     $this->dataCollectedDate = $row['dataCollectedDate'];
     $this->output = $row['output'];
     $this->heatRate= $row['heatRate'];
@@ -26,7 +26,7 @@ class SensorTimeSeries
     $this->starts = $row['starts'];
 	}
 
-	public static function fetchKPIBySensorDeployedId(int $sensorDeployedId)
+	public static function fetchKPIBySensorDeployedId( $sensorDeployedId)
 	{
 		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
 		$sql = 'SELECT * FROM sensorTimeSeries WHERE sensorDeployedId=?;';

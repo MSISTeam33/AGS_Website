@@ -10,10 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
 require 'environment.php';
 
 /** Models **/
-require 'model/Client.php';
-require 'model/SiteTurbine.php';
-require 'model/TurbineInfo.php';
+require 'model/Client2.php';
 require 'model/Comment.php';
-require 'model/SensorInfo.php';
 require 'model/SensorTimeSeries.php';
 require 'model/StartsTrips.php';
+
+require 'model/EngineList.php';
+require 'model/GeneratorList.php';

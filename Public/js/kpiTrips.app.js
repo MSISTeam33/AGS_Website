@@ -6,7 +6,7 @@ var kpiTripsApp = new Vue({
 
   methods: {
     fetchStartsTripsBySensorDeployedId(sensorDeployedId) {
-      fetch('/api/startsTrips.php?sensorDeployedId=' + sensorDeployedId)
+      fetch('api/startsTrips.php?sensorDeployedId=' + sensorDeployedId)
         .then(response => response.json())
         .then(json => {
           kpiTripsApp.kpiList = json;
@@ -30,7 +30,7 @@ var kpiTripsApp = new Vue({
           },
 
           title: {
-              text: 'Percentage Chance the sensor Trips on a Day'
+              text: 'Percentage Chance the engine Trips on a Day'
           },
 
           pane: {

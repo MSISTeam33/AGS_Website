@@ -11,20 +11,20 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
   <link rel="stylesheet" href="css/siteTurbine.css" />
-  <title>Site Information</title>
+  <title>My Clients</title>
 </head>
 
 <body>
   <header>
     <img src="css/logo.png" alt="AGS logo" style="width:45px;" />
-      Alternative Green System
+      Cummins
   </header>
   <!-- Navbar -->
   <nav class="navbar navbar-default">
     <div class="collapse navbar-collapse" id="myMenu">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
-        <li><a href="clientComments.html">Client</a></li>
+        <li><a href="clientComments.html">My Clients</a></li>
       </ul>
     </div>
   </nav>
@@ -39,7 +39,6 @@
           <div class="col-lg-2 col-md-2"><strong class="uppercase">Client Name</strong></div>
           <div class="col-lg-3 col-md-3"><strong class="uppercase">Client Description</strong></div>
           <div class="col-lg-1 col-md-1"><strong class="uppercase">Sector</strong></div>
-          <div class="col-lg-1 col-md-1"><strong class="uppercase">Sub Industry</strong></div>
           <div class="col-lg-2 col-md-2"><strong class="uppercase">Headquarters</strong></div>
         </div>
       </div>
@@ -54,10 +53,12 @@
                 <div class="col-lg-2 col-md-2"><span class="title">{{cl.clientName}}</span></div>
                 <div class="col-lg-3 col-md-3">{{cl.clientDescription}}</div>
                 <div class="col-lg-1 col-md-1">{{cl.gicsSector}}</div>
-                <div class="col-lg-1 col-md-1">{{cl.gicsSubIndustry}}</div>
-                <div class="col-lg-1 col-md-1">{{cl.headquarters}}</div>
-                <div class="col-lg-2 col-md-2">
-                  <div class="uppercase" @click="gotoSite(cl.clientId)"><strong><i class="fa fa-wrench"></i> View Sites</strong></div>
+                <div class="col-lg-2 col-md-2">{{cl.headquarters}}</div>
+                <div class="col-lg-1 col-md-1">
+                  <div class="uppercase" @click="gotoEngines(cl.clientId)"><strong><i class="fa fa-wrench"></i> View Engines</strong></div>
+                </div>
+                <div class="col-lg-1 col-md-1">
+                  <div class="uppercase" @click="gotoGenerators(cl.clientId)"><strong><i class="fa fa-wrench"></i> View Generators</strong></div>
                 </div>
                 <div class="col-lg-2 col-md-2">
                   <div class="uppercase" @click="fetchCommentsByClientId($event, cl.clientId)" :data-client-id="cl.clientId"><strong><i class="fa fa-wrench"></i> View Comments</strong><span class="row-toggle"><span class="horizontal"></span><span
@@ -90,7 +91,7 @@
   <!-- Container -->
 
   <footer>
-  	@Team 33
+  	@Team 18
   </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

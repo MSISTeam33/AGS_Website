@@ -6,14 +6,14 @@ class StartsTrips
   public $startsPercentage;
 
   public function __construct($row) {
-    $this->sensorDeployedId = isset($row['sensorDeployedId']) ? intval($row['sensorDeployedId']) : null;
+    $this->sensorDeployedId = isset($row['sensorDeployedId']) ? ($row['sensorDeployedId']) : null;
     $this->tripsPercentage = $row['tripsPercentage'];
     $this->startsPercentage = $row['startsPercentage'];
   }
 
-  public static function fetchStartsTripsBySensorDeployedId(int $sensorDeployedId) {
+  public static function fetchStartsTripsBySensorDeployedId( $sensorDeployedId) {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'SELECT * FROM startsTrips where sensorDeployedId=?;';
+    $sql = 'SELECT * FROM startstrips where sensorDeployedId=?;';
     $statement = $db->prepare($sql);
     $success = $statement->execute([$sensorDeployedId]);
     $arr = [];

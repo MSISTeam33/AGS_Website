@@ -6,11 +6,10 @@ var clientApp = new Vue({
       'clientName' :'',
       'clientDescription':'',
       'gicsSector':'',
-      'gicsSubIndustry':'',
       'headquarters':''
     }],
     commentList: [{
-        'commentId': '',
+        'commentId': null,
         'clientId': '',
         'commentSection': ''
     }]
@@ -19,12 +18,14 @@ var clientApp = new Vue({
     //works with HTML page to get data from API
     getEmptyForm() {
         document.getElementById('commentSection').value = '';
-        //document.getElementById('clientId').value = '';
     }, //end of get empty form
 
     fetchClients () {
       fetch('api/client.php')
-      .then( response => response.json() )
+      // .then(json => {
+      //     console.log(json)
+      // })
+      .then( response => response.json())
       .then( json => {clientApp.clientList = json} )
       .catch( err => {
         console.log('CLIENT FETCH ERROR:');
@@ -32,8 +33,12 @@ var clientApp = new Vue({
       })
     }, //end of fetch clients
 
-    gotoSite(cid) {
-      window.location = 'siteTurbine.html?clientId=' + cid;
+    gotoEngines(cid) {
+      window.location = 'EngineList.html';
+    }, //end of go to Site
+
+    gotoGenerators(cid) {
+      window.location = 'GeneratorList.html';
     }, //end of go to Site
 
     fetchCommentsByClientId(event, cl_id)
@@ -59,9 +64,10 @@ var clientApp = new Vue({
 
     insertNewComment(cliId) {
         const com = (document.getElementById('commentSection').value);
-        //const cliId = (document.getElementById('clientId').value);
+
         console.log(com);
         console.log(cliId);
+
         // POST to remote server
         fetch('api/comment.php', {
                 method: "POST",
@@ -75,16 +81,16 @@ var clientApp = new Vue({
             })
             .then(response => response.json())
             .then(json => {
-                console.log(json)
-            }) //working till here
-            .then(json => {
-                clientApp.commentList = json
+                clientApp.commentList[0] = json
             })
+            .then(json => {
+                console.log(clientApp.commentList[0]);
+                console.log("BC");
+            }) //working till here
             .catch(err => {
                 console.error('COMMENT POST ERROR:');
                 console.error(err);
             })
-        //this.fetchComments();
         this.getEmptyForm();
         location.reload();
     } //end of insert new comment

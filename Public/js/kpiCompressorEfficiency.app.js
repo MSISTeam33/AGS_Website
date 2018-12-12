@@ -6,7 +6,7 @@ var kpiCompressorEfficiencyApp = new Vue({
 
   methods: {
     fetchSensorTimeSeries(sensorDeployedId) {
-      fetch('/api/sensorTimeSeries.php?sensorDeployedId=' + sensorDeployedId)
+      fetch('api/sensorTimeSeries.php?sensorDeployedId=' + sensorDeployedId)
         .then(response => response.json())
         .then(json => {
           kpiCompressorEfficiencyApp.sensorTimeSeries = json;
