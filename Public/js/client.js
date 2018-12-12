@@ -21,7 +21,7 @@ var clientApp = new Vue({
     }, //end of get empty form
 
     fetchClients () {
-      fetch('api/client.php')
+      fetch('/api/client.php')
       // .then(json => {
       //     console.log(json)
       // })
