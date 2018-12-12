@@ -37,7 +37,7 @@ var engineListApp = new Vue({
    // console.log('Client: '+ clientId);
 
    // TODO: Fetch client-specific site
-   fetch('api/engineList.php')
+   fetch('/api/engineList.php')
    .then( response => response.json() )
    .then( json => {engineListApp.engineList = json} )
    .catch( err => {
