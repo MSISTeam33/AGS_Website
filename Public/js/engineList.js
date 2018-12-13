@@ -26,7 +26,7 @@ var engineListApp = new Vue({
     }, //end of load turbine
 
     gotoKPI(eid) {
-      window.location = 'kpi.html?data_product_Id=' + eid;
+      window.location = 'sensorTimeSeriesDashboard.html?sensorDeployedId=' + eid;
     }, //end of go to KPI
   }, //end of methods
 
