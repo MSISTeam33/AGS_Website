@@ -14,7 +14,7 @@ var loginApp = new Vue({
       }
       else if (user == 'technician1@cummins.com' && pass == 'technician1')
       {
-        window.location = 'http://ec2-34-218-81-248.us-west-2.compute.amazonaws.com/t_tasks.html';
+        window.location = 't_tasks.html';
       }
       else if (user == 'hr1@cummins.com' && pass == 'manager1')
       {
