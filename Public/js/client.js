@@ -34,11 +34,11 @@ var clientApp = new Vue({
     }, //end of fetch clients
 
     gotoEngines(cid) {
-      window.location = 'engineList.html';
+      window.location = 't_engineList.html';
     }, //end of go to Site
 
     gotoGenerators(cid) {
-      window.location = 'generatorList.html';
+      window.location = 't_generatorList.html';
     }, //end of go to Site
 
     fetchCommentsByClientId(event, cl_id)

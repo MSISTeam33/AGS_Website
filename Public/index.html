@@ -1,112 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Home Page</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <meta name="viewport" content="width=device-width, initial-scale=0.95">
-	<link rel="stylesheet" href="css/smHomePage.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
+	<title>Cummins Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
+<body>
 
-<body style="background: #dd0732">
-  <header style="color:white;font-weight:bold;">
-    <img src="css/logo.png" alt="AGS logo" style="width:45px; color:white;font-weight:bold;" />
-      Alternative Green System
-  </header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-default">
-    <div class="collapse navbar-collapse" id="myMenu">
-      <ul class="nav navbar-nav">
-        <li><a href="smHomePage.html">Home</a></li>
-        <li><a href="clientComments.html">My Clients</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- Navbar -->
-  <div class="wrapper">
-    <div class="align">
+	<div class="limiter" id = "loginPage">
+		<div class="container-login100" style="background-image: url('images/img-01.jpg');">
+			<div class="wrap-login100 p-t-190 p-b-30">
+				<form class="login100-form validate-form">
+					<div class="login100-form-avatar">
+						<img src="images/Black-Logo.jpg" alt="Cummins">
+					</div>
 
-    <!------ To-Do List App ----->
-    <div class="app">
-      <div class="info">
-        <div class="date">
-          <p id="day"><span id="today">Sunday,</span><span id="daymonth"> 30th</span></p>
-          <p id="month">January</p>
-        </div>
-        <div class="info-bottom">
-          <div class="left">
-            <p id="count">7</p>
-            <p id="tasks">Total</p>
-          </div>
-          <div class="middle">
-            <p id="remaining_done">5</p>
-            <p id="remaining_tasks">Remaining</p>
-          </div>
-          <div class="right">
-            <p id="count_done">2</p>
-            <p id="tasks_done">Done</p>
-          </div>
-        </div>
-      </div>
+					<span class="login100-form-title p-t-20 p-b-45">
+						Cummins
+					</span>
 
-      <ul>
-        <p id="today2"><strong>Tasks</strong> for today</p>
-        <li class="lihiden">
-          <a href="" class="check_button" onmousedown="return false">
-            <i class="fa fa-check-circle mark" aria-hidden="true"></i>
-          </a>
-          <div class="right">
-            <p contenteditable="true">Check up on Client Hoosier Energy</p>
-          </div>
-          <span class="delete_button" onmousedown="return false">
-            <i class="fa fa-times-circle" aria-hidden="true"></i>
-          </span>
-        </li>
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
+						<input id="usernameTB" class="input100" type="text" name="username" placeholder="Username">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
 
-        <li class="lihiden">
-          <a href="" class="check_button" onmousedown="return false">
-            <i class="fa fa-circle-thin" aria-hidden="true"></i>
-          </a>
-          <div class="right">
-            <p contenteditable="true">Monitor Site King County Farm</p>
-          </div>
-          <span class="delete_button" onmousedown="return false">
-           <i class="fa fa-times-circle" aria-hidden="true"></i>
-          </span>
-        </li>
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
+						<input id="passwordTB" class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock"></i>
+						</span>
+					</div>
 
-        <li class="lihiden">
-          <a href="" class="check_button" onmousedown="return false">
-            <i class="fa fa-circle-thin" aria-hidden="true"></i>
-          </a>
-          <div class="right">
-            <p contenteditable="true">Plan all upcoming site visits</p>
-          </div>
-          <span class="delete_button" onmousedown="return false">
-           <i class="fa fa-times-circle" aria-hidden="true"></i>
-          </span>
-        </li>
+					<div class="container-login100-form-btn p-t-10">
+						<button class="login100-form-btn" @click="login()">
+							Login
+						</button>
+					</div>
 
-      </ul>
+					<div class="text-center w-full p-t-25 p-b-230">
+						<a href="#" class="txt1">
+							Forgot Username / Password?
+						</a>
+					</div>
 
-      <div class="bottom">
-        <a href="" id="add-new" onmousedown="return false">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-          Add new item
-        </a>
-      </div>
+					<div class="text-center w-full">
+						<a class="txt1" href="#">
+							Create new account
+							<i class="fa fa-long-arrow-right"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
-    </div>
-    <!----- End To-Do List ------->
 
-    </div>
-  </div>
-  <script src="js/smHome.app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--===============================================================================================-->
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/login.js"></script>
+
 </body>
-
 </html>
