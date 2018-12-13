@@ -10,11 +10,11 @@ var loginApp = new Vue({
       console.log(pass);
       if (user == 'customer1@cummins.com' && pass == 'customer1')
       {
-        window.location = 'engineList.html';
+        window.location = 'clientHome.html';
       }
       else if (user == 'technician1@cummins.com' && pass == 'technician1')
       {
-        window.location = 'index.html';
+        window.location = 't_tasks.html';
       }
       else if (user == 'hr1@cummins.com' && pass == 'manager1')
       {
