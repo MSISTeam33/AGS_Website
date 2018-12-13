@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>function goBack() {window.history.back();}</script>
+  <script>
+    function showOutput(checked){
+      if(checked==true)
+        $("#kpiOutput").fadeIn();
+      else
+        $("#kpiOutput").fadeOut();
+    }
+    function showAvailability(checked){
+      if(checked==true)
+        $("#kpiAvailability").fadeIn();
+      else
+        $("#kpiAvailability").fadeOut();
+    }
+    function showCompressorEfficiency(checked){
+      if(checked==true)
+        $("#kpiCompressorEfficiency").fadeIn();
+      else
+        $("#kpiCompressorEfficiency").fadeOut();
+    }
+    function showHeat(checked){
+      if(checked==true)
+        $("#kpiHeat").fadeIn();
+      else
+        $("#kpiHeat").fadeOut();
+    }
+    function showHours(checked){
+      if(checked==true)
+        $("#kpiHours").fadeIn();
+      else
+        $("#kpiHours").fadeOut();
+    }
+    function showReliability(checked){
+      if(checked==true)
+        $("#kpiReliability").fadeIn();
+      else
+        $("#kpiReliability").fadeOut();
+    }
+    function showTrips(checked){
+      if(checked==true)
+        $("#kpiTrips").fadeIn();
+      else
+        $("#kpiTrips").fadeOut();
+    }
+    function showStarts(checked){
+      if(checked==true)
+        $("#kpiStarts").fadeIn();
+      else
+        $("#kpiStarts").fadeOut();
+    }
+  </script>
+  <link rel="stylesheet" href="css/siteTurbine.css" />
+  <title>dashboard</title>
+
+  <style>
+h4{
+  color:white;
+  font-weight:bold;
+}
+  </style>
+</head>
+
+
+<body style="padding-left:30px;">
+    <header>
+      <img src="css/logo.png" alt="AGS logo" style="width:45px;" />
+        Cummins
+    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+      <div class="collapse navbar-collapse" id="myMenu">
+        <ul class="nav navbar-nav">
+          <li><a href="t_tasks.html">My Tasks</a></li>
+          <li><a href="t_clientComments.html">My Clients</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- Back Button to go to Clients -->
+    <div class="row">
+      <div class="col-xs-3"><a class="btn btn-black btn-sm" onclick="goBack()"><i class="fas fa-globe-americas" style="color:white;font-size:15px"></i>  Back to List</a></div>
+    </div> <br/>
+    <!-- Back Button to go to Clients -->
+
+    <div style="color:white;">
+      <h3>Select KPIs you want to view:</h3>
+      <input type="checkbox" onchange="showOutput(this.checked)" name="OutputCB" />Output <br/>
+      <input type="checkbox" onchange="showAvailability(this.checked)" name="AvailabilityCB" />Availability <br/>
+      <input type="checkbox" onchange="showCompressorEfficiency(this.checked)" name="CompressorEfficiencyCB" />CompressorEfficiency <br/>
+      <input type="checkbox" onchange="showHeat(this.checked)" name="HeatCB" />Heat <br/>
+      <input type="checkbox" onchange="showHours(this.checked)" name="HoursCB" />Fired Hours <br/>
+      <input type="checkbox" onchange="showReliability(this.checked)" name="ReliabilityCB" />Reliability <br/>
+      <input type="checkbox" onchange="showTrips(this.checked)" name="TripsCB" />Trips <br/>
+      <input type="checkbox" onchange="showStarts(this.checked)" name="StartsCB" />Starts <br/>
+    </div>
+    <div>
+    <div id="kpiOutput" style="display:none;">
+      <h4>Output</h4>
+      <div id="outputChart" class="col">
+      </div>
+    </div>
+
+    <div id="kpiAvailability" style="display:none;">
+      <h4>Availability</h4>
+      <div id="availabilityChart" class="col">
+      </div>
+    </div>
+
+    <div id="kpiCompressorEfficiency" style="display:none;">
+      <h4>Compressor Efficiency</h4>
+      <div id="compressorEfficiencyChart" class="col">
+      </div>
+    </div>
+
+    <div id="kpiHeat" style="display:none;">
+      <h4>Heat Rate</h4>
+      <div id="heatChart" class="col">
+      </div>
+    </div>
+
+    <div id="kpiHours" style="display:none;">
+      <h4>Fired Hours</h4>
+      <div id="hoursChart" class="col">
+      </div>
+    </div>
+
+    <div id="kpiReliability" style="display:none;">
+      <h4>Reliability</h4>
+      <div id="reliabilityChart" class="col">
+      </div>
+    </div>
+
+
+            <div id="kpiStarts" style="display:none;">
+              <h4>Starts Percentage</h4>
+              <div id="startsChart" class="col"></div>
+            </div>
+
+        <div id="kpiTrips" style="display:none;">
+          <h4>Trips Percentage</h4>
+          <div id="tripsChart" class="col"></div>
+        </div>
+      </div>
+    <footer>
+      @Team 18
+    </footer>
+  </body>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<!-- <script src="js/dashboard.app.js"></script> -->
+<!-- HIGHCHARTS -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="/js/kpiOutput.app.js"></script>
+<script src="js/kpiAvailability.app.js"></script>
+<script src="js/kpiCompressorEfficiency.app.js"></script>
+<script src="js/kpiHeat.app.js"></script>
+<script src="js/kpiHours.app.js"></script>
+<script src="js/kpiReliability.app.js"></script>
+<script src="js/kpiStarts.app.js"></script>
+<script src="js/kpiTrips.app.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>
