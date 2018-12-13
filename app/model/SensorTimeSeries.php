@@ -29,7 +29,7 @@ class SensorTimeSeries
 	public static function fetchKPIBySensorDeployedId( $sensorDeployedId)
 	{
 		$db = new PDO(DB_SERVER, DB_USER, DB_PW);
-		$sql = 'SELECT * FROM sensorTimeSeries WHERE sensorDeployedId=\"?\";';
+		$sql = 'SELECT * FROM sensorTimeSeries WHERE sensorDeployedId=?;';
 		$statement = $db->prepare($sql);
 		$success = $statement->execute([$sensorDeployedId]);
 		$arr = [];
